@@ -15,7 +15,6 @@
  * (k) Matchbox
  * (l) Pittenger Hall / Palmer Hall / Roberts Hall / NPPR Apartments
  
-
 // Starting from Dana / Hallowell / Danawell / Wharton
      // Distance (a) <--> (b) = 0.2 
      // Distance (a) <--> (c) = 0.3 
