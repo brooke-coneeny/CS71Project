@@ -1,3 +1,19 @@
 h1 {
     font-weight: bold;
+    text-align: center;
+    padding: 15px;
 }
+
+#take-a-walk {
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+#take-a-walk-button {
+    text-align: center;
+}
+
+div {
+    align-content: center;
+}
+
