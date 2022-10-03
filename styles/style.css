@@ -17,3 +17,18 @@ div {
     align-content: center;
 }
 
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#dropdown-menu {
+    margin: 5px;
+    padding: 5px;
+}
+
+#input-miles {
+    margin: 5px;
+    padding: 5px;
+}
