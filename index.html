@@ -11,21 +11,34 @@
   </head>
   <body>
     <div>
+      
       <div>
         <h1 id="title">
           Swat Moves
         </h1>
       </div>
-        <p id="take-a-walk-button">
+
+      <div id="navigation">
+        <div>
+          <button>Quests</button>
+        </div>
+        <div id="take-a-walk-button">
           <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#take-a-walk" aria-expanded="false">
             Take a walk
           </button>
-        </p>
-      <div class="collapse" id="take-a-walk">
-        <div class="card card-body">
+        </div>
+        <div>
+          <button>Log In</button>
+          <button>Account Info</button>
+        </div>
+      </div>
 
+      <div class="collapse" id="take-a-walk">
+
+        <div class="card card-body">
           <!-- Start of the collapsible "Take A Walk" Input Form  -->
           <div class="dropdown" id="exercise-info">
+
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Location
             </button>
@@ -33,15 +46,19 @@
               <a class="dropdown-item" href="#">Science Center</a>
               <a class="dropdown-item" href="#">Parrish</a>
             </div>
+
             <div id="enter-miles">
               <input id="input-miles" placeholder="Enter miles"></input>
               <button id="confirm-miles">Confirm</button>
             </div>
+
           </div>
           <!-- End of the collapsible "Take A Walk" Input Form  -->
         </div>
+
       </div>
     </div>
+
     <!-- Bootstrap JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
