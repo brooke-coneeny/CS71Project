@@ -1,0 +1,102 @@
+   This file contains notes for the graph we will create the map of Swarthmore
+   The goal is to create a JSON graph object. 
+   The nodes will represent places and edges will be the distance 
+
+ * (a) Dana Hall / Hallowell Hall / Danawell Hall / Wharton 
+ * (b) Clothier Hall
+ * (c) Underhill Music Library / Kohlberg Hall 
+ * (d) Cornell Library / Science Center
+ * (e) Beardsley Hall / Pearson Hall / Trotter Hall 
+ * (f) Singer Hall 
+ * (g) McCabe Library
+ * (h) Willets Hall / Worth Hall 
+ * (i) David Kemp Hall / Alice Paul Hall / Mertz
+ * (j) Sharples Dining Hall
+ * (k) Matchbox
+ * (l) Pittenger Hall / Palmer Hall / Roberts Hall / NPPR Apartments
+ 
+// Starting from Dana / Hallowell / Danawell / Wharton
+     // Distance (a) <--> (b) = 0.2 
+     // Distance (a) <--> (c) = 0.3 
+     // Distance (a) <--> (d) = 0.3
+     // Distance (a) <--> (e) = 0.4 
+     // Distance (a) <--> (f) = 0.4
+     // Distance (a) <--> (g) = 0.3
+     // Distance (a) <--> (h) = 0.4 
+     // Distance (a) <--> (i) = 0.4 
+     // Distance (a) <--> (j) = 0.2 
+     // Distance (a) <--> (k) = 0.3
+     // Distance (a) <--> (l) = 0.2
+
+// Starting from Clothier 
+     // Distance (b) <--> (c) = 0.2 
+     // Distance (b) <--> (d) = 0.2
+     // Distance (b) <--> (e) = 0.2
+     // Distance (b) <--> (f) = 0.3 
+     // Distance (b) <--> (g) = 0.1 
+     // Distance (b) <--> (h) = 0.3
+     // Distance (b) <--> (i) = 0.3
+     // Distance (b) <--> (j) = 0.1 
+     // Distance (b) <--> (k) = 0.3
+     // Distance (b) <--> (l) = 0.5 
+
+// Starting from Underhill / Kohlberg
+     // Distance (c) <--> (d) = 500 ft 
+     // Distance (c) <--> (e) = 0.1
+     // Distance (c) <--> (f) = 0.2
+     // Distance (c) <--> (g) = 0.2
+     // Distance (c) <--> (h) = 0.7
+     // Distance (c) <--> (i) = 0.4
+     // Distance (c) <--> (j) = 0.2
+     // Distance (c) <--> (k) = 0.4
+     // Distance (c) <--> (l) = 0.6
+
+// Starting from Cornell / Sci 
+     // Distance (d) <--> (e) = 500 ft 
+     // Distance (d) <--> (f) = 0.2
+     // Distance (d) <--> (g) = 0.2
+     // Distance (d) <--> (h) = 0.3
+     // Distance (d) <--> (i) = 0.4
+     // Distance (d) <--> (j) = 0.2
+     // Distance (d) <--> (k) = 0.4
+     // Distance (d) <--> (l) = 0.6
+
+// Starting from Beardsley / Pearson / Trotter
+     // Distance (e) <--> (f) = 100 ft 
+     // Distance (e) <--> (g) = 0.2
+     // Distance (e) <--> (h) = 0.3
+     // Distance (e) <--> (i) = 0.3
+     // Distance (e) <--> (j) = 0.3
+     // Distance (e) <--> (k) = 0.5
+     // Distance (e) <--> (l) = 0.6
+
+// Starting from Singer
+     // Distance (f) <--> (g) = 0.2
+     // Distance (f) <--> (h) = 0.3
+     // Distance (f) <--> (i) = 0.4
+     // Distance (f) <--> (j) = 0.3
+     // Distance (f) <--> (k) = 0.5
+     // Distance (f) <--> (l) = 0.7
+
+// Starting from McCabe
+     // Distance (g) <--> (h) = 0.2
+     // Distance (g) <--> (i) = 0.2
+     // Distance (g) <--> (j) = 0.1
+     // Distance (g) <--> (k) = 0.4
+     // Distance (g) <--> (l) = 0.5
+
+// Starting from Willets / Worth
+     // Distance (h) <--> (i) = 0.3
+     // Distance (h) <--> (j) = 0.3
+     // Distance (h) <--> (k) = 0.5
+
+// Starting from DK / AP / Mertz
+     // Distance (i) <--> (j) = 0.2
+     // Distance (i) <--> (k) = 0.4
+
+// Starting from Sharples 
+     // Distance (j) <--> (k) = 0.3
+
+
+
+
