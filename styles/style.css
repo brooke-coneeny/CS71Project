@@ -1,3 +1,21 @@
+:root {
+    --swarthmore: darkred;
+    --swarthmore-secondary: #9f3333;
+    --button-color: rgb(154, 57, 57);
+
+}
+
+.btn {
+    background-color: var(--button-color);
+    border-color: white;
+
+}
+
+.btn:hover { 
+    background-color: var(--button-color);
+    border-color: black;
+}
+
 h1 {
     font-weight: bold;
     text-align: center;
@@ -8,13 +26,13 @@ h1 {
     display: flex;
     justify-content: space-around;
     margin: 5px;
-    background-color: darkred;
+    background-color: var(--swarthmore);
     padding: 5px;
 }
 
 #take-a-walk {
-    padding-left: 10vw;
-    padding-right: 10vw;
+    padding-left: 30vw;
+    padding-right: 30vw;
 }
 
 #take-a-walk-button {
@@ -25,12 +43,6 @@ div {
     align-content: center;
 }
 
-.dropdown {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
 #dropdown-menu {
     margin: 5px;
     padding: 5px;
@@ -39,4 +51,22 @@ div {
 #input-miles {
     margin: 5px;
     padding: 5px;
+}
+
+#take-a-walk-section {
+    background-color: var(--swarthmore-secondary);
+}
+
+#exercise-info {
+    margin-bottom: 15px;
+}
+
+.route-info {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#map-img {
+    border: 5px solid black;
 }

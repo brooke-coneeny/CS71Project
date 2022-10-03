@@ -20,7 +20,9 @@
 
       <div id="navigation">
         <div>
-          <button>Quests</button>
+          <button class="btn btn-primary">
+            Quests
+          </button>
         </div>
         <div id="take-a-walk-button">
           <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#take-a-walk" aria-expanded="false">
@@ -28,15 +30,19 @@
           </button>
         </div>
         <div>
-          <button>Log In</button>
-          <button>Account Info</button>
+          <button class="btn btn-primary">
+            Log In
+          </button>
+          <button class="btn btn-primary">
+            Account Info
+          </button>
         </div>
       </div>
 
       <div class="collapse" id="take-a-walk">
-
-        <div class="card card-body">
+        <div id="take-a-walk-section" class="card card-body">
           <!-- Start of the collapsible "Take A Walk" Input Form  -->
+
           <div class="dropdown" id="exercise-info">
 
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -46,17 +52,31 @@
               <a class="dropdown-item" href="#">Science Center</a>
               <a class="dropdown-item" href="#">Parrish</a>
             </div>
-
-            <div id="enter-miles">
-              <input id="input-miles" placeholder="Enter miles"></input>
-              <button id="confirm-miles">Confirm</button>
-            </div>
-
           </div>
+          
+          <div id="enter-miles">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Enter miles">
+              <span class="input-group-text">mi</span>
+            </div>
+          </div>
+
+          <button class="btn btn-secondary" id="confirm-miles">Confirm</button>
           <!-- End of the collapsible "Take A Walk" Input Form  -->
         </div>
-
       </div>
+      
+      <div class="route-info">
+        <img id="map-img" src="images/Screen Shot 2022-09-26 at 2.14.34 PM.png" 
+             alt="Swarthmore map" width="500"">
+      </div>
+
+      <div class="route-info">
+        <span>
+          Description here :)
+        </span>
+      </div>
+
     </div>
 
     <!-- Bootstrap JavaScript -->
