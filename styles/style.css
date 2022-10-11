@@ -8,6 +8,7 @@
 .btn {
     background-color: var(--button-color);
     border-color: white;
+    margin: 5px;
 
 }
 
@@ -24,19 +25,36 @@ h1 {
 
 #navigation {
     display: flex;
-    justify-content: space-around;
-    margin: 5px;
+    max-width: 100%;
     background-color: var(--swarthmore);
     padding: 5px;
+    margin: 5px;
+}
+
+#quest-button {
+    display: flex;
+    justify-content: center;
+    max-width: 33%;
+    flex-grow: 1;
+}
+
+#take-a-walk-button {
+    display: flex;
+    justify-content: center;
+    max-width: 33%;
+    flex-grow: 1;
+}
+
+#account-info {
+    display: flex;
+    justify-content: center;
+    max-width: 34%;
+    flex-grow: 1;
 }
 
 #take-a-walk {
     padding-left: 30vw;
     padding-right: 30vw;
-}
-
-#take-a-walk-button {
-    text-align: center;
 }
 
 div {
