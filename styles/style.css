@@ -96,3 +96,9 @@ h1 {
 #map-img {
     border: 5px solid black;
 }
+
+
+#map-div { 
+    width: 50vw; 
+    height: 50vh; 
+}

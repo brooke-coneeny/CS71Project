@@ -34,3 +34,24 @@ $("#willets").click(function() {
 $("#nppr").click(function() {
     $("#dropdownMenuButton").text("PPR Apartments");
 });
+
+/******************************************************************
+ * Start of TomTom Map SDK code
+ */
+const API_KEY = 'zjqAcEr9qywkLXAs1Cg5xGVr6x4q3vcd';
+const APPLICATION_NAME = 'SwatMoves';
+const APPLICATION_VERSION = '1.0';
+const SWARTHMORE_COLLEGE = {lng: -75.3499, lat: 39.9010};
+
+tt.setProductInfo(APPLICATION_NAME, APPLICATION_VERSION);
+
+var map = tt.map({
+  key: API_KEY,
+  container: 'map-div',
+  center: SWARTHMORE_COLLEGE,
+  zoom: 12
+});
+
+/******************************************************************
+ * End of TomTom Map SDK code
+ */
