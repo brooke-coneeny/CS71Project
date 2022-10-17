@@ -46,7 +46,7 @@
           <!-- Start of the collapsible "Take A Walk" Input Form  -->
           <div class="dropdown" id="exercise-info">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Location
+              Science Center
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a id="science-center" class="dropdown-item" href="#">Science Center</a>
@@ -62,6 +62,7 @@
               <input id="miles" type="text" class="form-control" placeholder="Enter miles">
               <span class="input-group-text">mi</span>
             </div>
+            <p id="not-a-number">Please enter a number!</p>
           </div>
 
           <button class="btn btn-secondary" id="confirm">Confirm</button>
@@ -69,15 +70,18 @@
         </div>
       </div>
       
-      <div class="route-info">
+      <div class="map-info">
         <img id="map-img" src="images/Screen Shot 2022-09-26 at 2.14.34 PM.png" 
              alt="Swarthmore map" width="500"">
       </div>
 
       <div class="route-info">
-        <span>
-          Description here :)
-        </span>
+        <div>
+          <span id="distance-to-travel"></span>
+        </div>
+        <div>
+          <span id="route-to-take"></span>
+        </div>
       </div>
 
     </div>

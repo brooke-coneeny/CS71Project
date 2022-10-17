@@ -41,24 +41,20 @@ h1 {
 #take-a-walk-button {
     display: flex;
     justify-content: center;
-    max-width: 33%;
+    max-width: 34%;
     flex-grow: 1;
 }
 
 #account-info {
     display: flex;
     justify-content: center;
-    max-width: 34%;
+    max-width: 33%;
     flex-grow: 1;
 }
 
 #take-a-walk {
     padding-left: 30vw;
     padding-right: 30vw;
-}
-
-div {
-    align-content: center;
 }
 
 #dropdown-menu {
@@ -71,6 +67,11 @@ div {
     padding: 5px;
 }
 
+#not-a-number {
+    display: none;
+    color: red;
+}
+
 #take-a-walk-section {
     background-color: var(--swarthmore-secondary);
 }
@@ -79,10 +80,17 @@ div {
     margin-bottom: 15px;
 }
 
-.route-info {
+.map-info{
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin: 5px;
+}
+
+.route-info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 5px;
 }
 
 #map-img {
