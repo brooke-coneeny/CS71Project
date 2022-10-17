@@ -82,7 +82,8 @@ h1 {
 
 .map-info{
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     margin: 5px;
 }
 

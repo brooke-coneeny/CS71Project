@@ -52,6 +52,21 @@ var map = tt.map({
   zoom: 12
 });
 
+async function fetchLoc() {
+    const response = await tt.services.fuzzySearch({
+      key: API_KEY,
+      query: document.querySelector('#map-query').value,
+    })
+    if(response.results) {
+        map = tt.map({
+        key: API_KEY,
+        container: 'map-div',
+        center: response.results[0].position,
+        zoom: 12
+        });
+    }
+  }
+
 /******************************************************************
  * End of TomTom Map SDK code
  */
