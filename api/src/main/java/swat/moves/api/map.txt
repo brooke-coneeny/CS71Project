@@ -21,11 +21,11 @@
      // Distance (a) <--> (d) = 0.3
      // Distance (a) <--> (e) = 0.4 
      // Distance (a) <--> (f) = 0.4
-     // Distance (a) <--> (g) = 0.3
-     // Distance (a) <--> (h) = 0.4 
-     // Distance (a) <--> (i) = 0.4 
-     // Distance (a) <--> (j) = 0.2 
-     // Distance (a) <--> (k) = 0.3
+     // Distance (a) <--> (g) = 0.3.
+     // Distance (a) <--> (h) = 0.4.
+     // Distance (a) <--> (i) = 0.4 .
+     // Distance (a) <--> (j) = 0.2 .
+     // Distance (a) <--> (k) = 0.3.
      // Distance (a) <--> (l) = 0.2
 
 // Starting from Clothier 
