@@ -43,7 +43,20 @@ $("#nppr").click(function() {
 const API_KEY = 'zjqAcEr9qywkLXAs1Cg5xGVr6x4q3vcd';
 const APPLICATION_NAME = 'SwatMoves';
 const APPLICATION_VERSION = '1.0';
-const SWARTHMORE_COLLEGE = {lng: -75.3499, lat: 39.9010};
+const PARRISH_HALL = {
+    lng: -75.35419467875656, 
+    lat: 39.90524432327209
+};
+const SCIENCE_CENTER = {
+    lng: -75.35570622718119,
+    lat: 39.9061061340093
+};
+const MARY_LYONS = {
+    lng: -75.35403663216876,
+    lat: 39.89573181458555
+};
+
+
 
 tt.setProductInfo(APPLICATION_NAME, APPLICATION_VERSION);
 
@@ -57,7 +70,7 @@ function isMobileOrTablet(){var i,a=!1;return i=navigator.userAgent||navigator.v
     container: 'map',
     dragPan: !isMobileOrTablet(),
     zoom: 13,
-    center: SWARTHMORE_COLLEGE
+    center: PARRISH_HALL
 });
 map.addControl(new tt.FullscreenControl());
 map.addControl(new tt.NavigationControl());
@@ -100,7 +113,6 @@ var callParameters = {
     key: API_KEY,
     maxAlternatives: 0,
     traffic: false,
-    locations: '-75.3499,39.9010:-75.3557,39.9059',
     travelMode: 'pedestrian'
 };
 function handleCalculateRouteRequest() {
@@ -151,7 +163,7 @@ function display_route(miles, startLocation) {
         container: 'map',
         dragPan: !isMobileOrTablet(),
         zoom: 13,
-        center: SWARTHMORE_COLLEGE
+        center: PARRISH_HALL
     });
 
     map.addControl(new tt.FullscreenControl());
@@ -161,7 +173,7 @@ function display_route(miles, startLocation) {
         key: API_KEY,
         maxAlternatives: 0,
         traffic: false,
-        locations: '-77.3499,39.9010:-75.3557,39.9059',
+        locations: [PARRISH_HALL, MARY_LYONS],
         travelMode: 'pedestrian'
     };
 
