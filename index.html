@@ -73,14 +73,9 @@
       </div>
       
       <div class="map-info">
-        <div id="map-div">
+        <div id="map" class="map">
           
         </div>
-        <div>
-          <input type="text" id="map-query" placeholder="Type a location">
-          <button onclick="fetchLoc()">Submit</button>
-        </div>
-        <div id="mapArea"></div>
       </div>
 
       <div class="route-info">
@@ -103,6 +98,10 @@
     <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/maps/maps-web.min.js"></script>
     <!-- TomTom CDN (Content Delivery Network) -->
     <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/services/services-web.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script>
+        moment().format();
+    </script>
     <!-- Custom JavaScript -->
     <script src="scripts/main.js"></script>
   </body>
