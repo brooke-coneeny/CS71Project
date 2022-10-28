@@ -19,7 +19,7 @@ public class create_specific_tables {
         try {
           Class.forName("org.postgresql.Driver");
           Connection c = null;
-          c = DriverManager.getConnection("jdbc:postgresql://localhost:5433/swatmoves",
+          c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/swatmoves",
           "postgres", "admin");
           System.out.println("Opened database successfully");
           //list of tables
