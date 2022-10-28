@@ -10,6 +10,7 @@ $("#confirm").click(function() {
         $("#take-a-walk").collapse('toggle');
         $("#distance-to-travel").text("Miles: " + String(miles));
         $("#route-to-take").text("Route: " + startLocation + " to " + endLocation);
+        sendRequestForAllLocation();
     } else {
         $("#not-a-number").show();
     }

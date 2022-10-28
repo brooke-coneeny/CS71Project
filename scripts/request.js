@@ -1,14 +1,23 @@
-/*
-function sendRequest() {
+function sendRequestForELocation(sLocation, miles) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        // Do something here with this.responseText
-        console.log("Response Received: " + this.responseText);
+        $("#route-to-take").text("Route: " + sLocation + " to " + this.responseText);
       }
     };
-    xhttp.open("GET", "data/mydata.txt", true);
+    xhttp.open("GET", "/" + sLocation + miles, true);
     xhttp.send();
-    console.log("Request Sent");
   }
-  */
+
+  function sendRequestForAllLocation() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        for(var i = 0; i < locations.length(); i++) {
+            console.log(this.responseText[i]);
+        }
+      }
+    };
+    xhttp.open("GET", "/get-locations", true);
+    xhttp.send();
+  }
