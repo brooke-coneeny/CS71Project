@@ -44,19 +44,31 @@ $("#nppr").click(function() {
 const API_KEY = 'zjqAcEr9qywkLXAs1Cg5xGVr6x4q3vcd';
 const APPLICATION_NAME = 'SwatMoves';
 const APPLICATION_VERSION = '1.0';
-const PARRISH_HALL = {
-    lng: -75.35419467875656, 
-    lat: 39.90524432327209
-};
+
 const SCIENCE_CENTER = {
     lng: -75.35570622718119,
     lat: 39.9061061340093
 };
+
+const PARRISH_HALL = {
+    lng: -75.35419467875656, 
+    lat: 39.90524432327209
+};
+
 const MARY_LYONS = {
     lng: -75.35403663216876,
     lat: 39.89573181458555
 };
 
+const WILLETS = {
+    lng: -75.35164810207202,
+    lat: 39.905969900531005
+};
+
+const PPR = {
+    lng: -75.35161580207222,
+    lat: 39.90009680278654
+};
 
 
 tt.setProductInfo(APPLICATION_NAME, APPLICATION_VERSION);
@@ -157,8 +169,7 @@ function onPopupTrigger(event) {
     createPopup(feature, event.lngLat);
 }
 
-function display_route(miles, startLocation) {
-    alert(miles + startLocation);
+function display_route(miles, startLoc) {
     map = tt.map({
         key: API_KEY,
         container: 'map',
@@ -170,11 +181,27 @@ function display_route(miles, startLocation) {
     map.addControl(new tt.FullscreenControl());
     map.addControl(new tt.NavigationControl());
 
+    var startCoord;
+    startLoc = startLoc.trim();
+    if (startLoc === "Science Center") {
+        startCoord = SCIENCE_CENTER;
+    } else if (startLoc === "Parrish") {
+        startCoord = PARRISH_HALL;
+    } else if (startLoc === "Mary Lyons") {
+        startCoord = MARY_LYONS;
+    } else if (startLoc === "Willets") {
+        startCoord = WILLETS;
+    } else if (startLoc === "PPR Apartments") {
+        startCoord = PPR;
+    } else {
+        alert("Error: Invalid building!");
+    }
+
     callParameters = {
         key: API_KEY,
         maxAlternatives: 0,
         traffic: false,
-        locations: [PARRISH_HALL, MARY_LYONS],
+        locations: [startCoord, SCIENCE_CENTER],
         travelMode: 'pedestrian'
     };
 
