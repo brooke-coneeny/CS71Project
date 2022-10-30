@@ -33,11 +33,11 @@
           </button>
         </div>
 
-        <div id="account-info">
-          <button class="btn btn-primary">
+        <div id="account-buttons">
+          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#log-in" aria-expanded="false">
             Log In
           </button>
-          <button class="btn btn-primary">
+          <button class="btn btn-primary" id="check-account-info">
             Account Info
           </button>
         </div>
@@ -69,6 +69,23 @@
 
           <button class="btn btn-secondary" id="confirm">Confirm</button>
           <!-- End of the collapsible "Take A Walk" Input Form  -->
+        </div>
+      </div>
+
+      <div class="collapse" id="log-in">
+        <div id="log-in-section" class="card card-body">
+          <div id="enter-info">
+            <div class="input-group mb-3" id="user-pass">
+              <input id="username" type="text" class="form-control" placeholder="Enter your username">
+              <input id="password" type="text" class="form-control" placeholder="Enter your password">
+            </div>
+            <p id="not-correct-info">Incorrect username or password!</p>
+          </div>
+
+          <div id="confirm-log-in">
+            <button class="btn btn-secondary" id="log-in-button">Log In</button>
+            <button class="btn btn-secondary" id="sign-up-button">Sign Up</button>
+          </div>
         </div>
       </div>
       
