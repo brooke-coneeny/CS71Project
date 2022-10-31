@@ -54,6 +54,10 @@ h1 {
     flex-grow: 1;
 }
 
+#sign-out {
+    display: none;
+}
+
 /* Take a Walk Collapse Styling */
 
 #take-a-walk {
@@ -103,12 +107,6 @@ h1 {
 
 #log-in-section {
     background-color: var(--swarthmore-secondary);
-}
-
-#confirm-log-in {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
 }
 
 /* Backend Info Styling */
