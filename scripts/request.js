@@ -22,8 +22,13 @@ function sendRequestForELocation(sLocation, miles) {
     xhttp.send();
   }
 
-
-
-
-
-  
+  function sendRequestForLogIn(username, password) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        $("#name").text(this.responseText);
+      }
+    };
+    xhttp.open("GET", "/" + username + password, true);
+    xhttp.send();
+  }
