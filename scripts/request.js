@@ -21,3 +21,9 @@ function sendRequestForELocation(sLocation, miles) {
     xhttp.open("GET", "/get-locations", true);
     xhttp.send();
   }
+
+
+
+
+
+  
