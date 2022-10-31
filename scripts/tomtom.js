@@ -156,15 +156,23 @@
      } else {
          alert("Error: Invalid building!");
      }
- 
+
+     location_list = [startCoord, MARY_LYONS, PPR, SCIENCE_CENTER];
+
      callParameters = {
          key: API_KEY,
          maxAlternatives: 0,
          traffic: false,
-         locations: [startCoord, SCIENCE_CENTER],
+         locations: location_list,
          travelMode: 'pedestrian'
      };
- 
+
+     for (let i = 0; i < location_list.length; i++) {
+        var marker = new tt.Marker({
+            draggable: false
+        }).setLngLat(location_list[i]).addTo(map);
+     }
+     
      handleCalculateRouteRequest();
  }
  /******************************************************************
