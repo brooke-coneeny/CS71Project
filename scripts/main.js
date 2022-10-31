@@ -38,6 +38,15 @@ $("#nppr").click(function() {
     $("#dropdownMenuButton").text("PPR Apartments");
 });
 
+
+$("#log-in-button").click(function(){
+
+});
+
+$("#sign-up-button").click(function(){
+    
+});
+
 /******************************************************************
  * Start of TomTom Map SDK code
  */
