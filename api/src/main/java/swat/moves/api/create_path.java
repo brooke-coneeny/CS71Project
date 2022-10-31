@@ -15,6 +15,7 @@ import java.util.Map.Entry;
 @RequestMapping
 public class create_path {
 //UNDER HILL IS MISSING A NEIGHBOR
+//check visited 
     @GetMapping("/get-path")
     public List getLocations() throws SQLException {
         String location = "";
