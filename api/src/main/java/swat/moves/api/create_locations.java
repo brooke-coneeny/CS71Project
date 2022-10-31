@@ -17,7 +17,7 @@ public class create_locations {
         try {
           Class.forName("org.postgresql.Driver");
           Connection c = null;
-          c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/swatmoves",
+          c = DriverManager.getConnection("jdbc:postgresql://localhost:5433/swatmoves",
           "postgres", "admin");
           System.out.println("Opened database successfully");
           PreparedStatement pstmt = c.prepareStatement("drop table if EXISTS locations; Create table locations (location varchar(400));");
