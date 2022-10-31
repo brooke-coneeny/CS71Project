@@ -36,6 +36,7 @@ $("#willets").click(function() {
 
 $("#nppr").click(function() {
     $("#dropdownMenuButton").text("PPR Apartments");
+<<<<<<< HEAD
 });
 
 
@@ -219,3 +220,6 @@ function display_route(miles, startLoc) {
 /******************************************************************
  * End of TomTom Map SDK code
  */
+=======
+});
+>>>>>>> 9c68fd420a20ec14b12f99567da5b93f6b0a332d
