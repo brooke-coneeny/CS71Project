@@ -3,20 +3,6 @@ var startLocation;
 var endLocation = "Science Center";
 var listLoc = [];
 
-$("#confirm").click(function() {
-    miles = $("#miles").val();
-    startLocation = $("#dropdownMenuButton").text();
-    if($.isNumeric(miles)) {
-        $("#not-a-number").hide();
-        $("#take-a-walk").collapse('toggle');
-        listLoc = sendRequestForELocation(startLocation, miles);
-        display_route(miles, startLocation, listLoc);
-        appendPath(listLoc);
-    } else {
-        $("#not-a-number").show();
-    }
-});
-
 $("#open-take-a-walk").click(function(){
     $("#log-in").collapse('hide');
 });
@@ -41,6 +27,20 @@ $("#nppr").click(function() {
     $("#dropdownMenuButton").text("PPR Apartments");
 });
 
+$("#confirm").click(function() {
+    miles = $("#miles").val();
+    startLocation = $("#dropdownMenuButton").text();
+    if($.isNumeric(miles)) {
+        $("#not-a-number").hide();
+        $("#take-a-walk").collapse('toggle');
+        listLoc = sendRequestForELocation(startLocation, miles);
+        display_route(miles, startLocation, listLoc);
+        appendPath(listLoc);
+    } else {
+        $("#not-a-number").show();
+    }
+});
+
 $("#log-in-button").click(function(){
     var username = $("#username").val();
     var password = $("#password").val();
@@ -57,6 +57,10 @@ $("#open-log-in").click(function(){
 $("#sign-out").click(function(){
     $("#sign-out").hide();
     $("#open-log-in").show();
+});
+
+$("#walk-complete").click(function(){
+    $("#take-a-walk").collapse('hide');
 });
 
 function appendPath(path, miles) {

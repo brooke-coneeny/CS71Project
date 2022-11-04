@@ -6,7 +6,7 @@ function sendRequestForELocation(sLocation, miles) {
         listLoc = this.responseText.split(",");
       }
     };
-    xhttp.open("GET", "/'" + sLocation + "'/" miles, true);
+    xhttp.open("GET", "/'" + sLocation + "'/" + miles, true);
     xhttp.send();
     return listLoc;
   }
