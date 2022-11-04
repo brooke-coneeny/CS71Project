@@ -1,21 +1,7 @@
 var miles;
 var startLocation;
 var endLocation = "Science Center";
-
-$("#confirm").click(function() {
-    miles = $("#miles").val();
-    startLocation = $("#dropdownMenuButton").text();
-    if($.isNumeric(miles)) {
-        $("#not-a-number").hide();
-        $("#take-a-walk").collapse('toggle');
-        $("#distance-to-travel").text("Miles: " + String(miles));
-        $("#route-to-take").text("Route: " + startLocation + " to " + endLocation);
-        sendRequestForAllLocation();
-    } else {
-        $("#not-a-number").show();
-    }
-    display_route(miles, startLocation);
-});
+var listLoc = [];
 
 $("#open-take-a-walk").click(function(){
     $("#log-in").collapse('hide');
@@ -41,6 +27,20 @@ $("#nppr").click(function() {
     $("#dropdownMenuButton").text("PPR Apartments");
 });
 
+$("#confirm").click(function() {
+    miles = $("#miles").val();
+    startLocation = $("#dropdownMenuButton").text();
+    if($.isNumeric(miles)) {
+        $("#not-a-number").hide();
+        $("#take-a-walk").collapse('toggle');
+        listLoc = sendRequestForELocation(startLocation, miles);
+        display_route(miles, startLocation, listLoc);
+        appendPath(listLoc);
+    } else {
+        $("#not-a-number").show();
+    }
+});
+
 $("#log-in-button").click(function(){
     var username = $("#username").val();
     var password = $("#password").val();
@@ -58,3 +58,18 @@ $("#sign-out").click(function(){
     $("#sign-out").hide();
     $("#open-log-in").show();
 });
+
+$("#walk-complete").click(function(){
+    $("#take-a-walk").collapse('hide');
+});
+
+function appendPath(path, miles) {
+    $("#distance-to-travel").append("<p class='route-text'>You will be walking for " + miles + "!</p>");
+    $("#route-to-take").append("<p class='route-text'>You will be walking to these locations</p>");
+    $("#route-to-take").append("<ol>");
+    for(var i = 0; i < path.length(); i++) {
+        $("#route-to-take").append("<li class='route-text'>" + path[i] + "</li>");
+    }
+    $("#route-to-take").append("</ol>");
+    $("#route-complete").append("<button class='btn btn-secondary' id='walk-complete'>Walk Completed!</button>");
+}

@@ -1,20 +1,24 @@
 function sendRequestForELocation(sLocation, miles) {
+    var listLoc = [];
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        $("#route-to-take").text("Route: " + sLocation + " to " + this.responseText);
+        listLoc = this.responseText.split(",");
       }
     };
-    xhttp.open("GET", "/" + sLocation + miles, true);
+    xhttp.open("GET", "/'" + sLocation + "'/" + miles, true);
     xhttp.send();
+    return listLoc;
   }
 
   function sendRequestForAllLocation() {
+    var listLoc = [];
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        for(var i = 0; i < locations.length(); i++) {
-            console.log(this.responseText[i]);
+        listLoc = this.responseText.split(",");
+        for(var i = 0; i < listLoc.length(); i++) {
+            console.log(listLoc[i]);
         }
       }
     };

@@ -125,6 +125,10 @@ h1 {
     margin: 5px;
 }
 
+.route-text {
+    font-weight: bold;
+}
+
 /* Map Styling */
 
 #map { 
