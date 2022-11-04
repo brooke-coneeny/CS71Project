@@ -124,7 +124,7 @@
      createPopup(feature, event.lngLat);
  }
  
- function display_route(miles, startLoc) {
+ function display_route(miles, startLoc, locationList = []) {
      map = tt.map({
          key: API_KEY,
          container: 'map',
