@@ -33,6 +33,6 @@ function sendRequestForELocation(sLocation, miles) {
         $("#name").text(this.responseText);
       }
     };
-    xhttp.open("GET", "/" + username + password, true);
+    xhttp.open("GET", "/login/" + username + "/" + password, true);
     xhttp.send();
   }
