@@ -5,22 +5,71 @@
  const APPLICATION_NAME = 'SwatMoves';
  const APPLICATION_VERSION = '1.0';
  
+ const PARRISH_HALL = {
+    lng: -75.35419467875656, 
+    lat: 39.90524432327209
+};
+
+const MARY_LYONS = {
+    lng: -75.35403663216876,
+    lat: 39.89573181458555
+};
+
+ const DANAWELL = {
+    lng: -75.35730477508594,
+    lat: 39.90350141354039
+ };
+
+ const CLOTHIER = {
+    lng: -75.3549274020721,
+    lat: 39.9044050151029
+ };
+
+ const KOHLBERG = {
+    lng: -75.3549107732364,
+    lat: 39.90602968091944
+ };
+
  const SCIENCE_CENTER = {
      lng: -75.35570622718119,
      lat: 39.9061061340093
  };
- const PARRISH_HALL = {
-     lng: -75.35419467875656, 
-     lat: 39.90524432327209
- };
- const MARY_LYONS = {
-     lng: -75.35403663216876,
-     lat: 39.89573181458555
- };
- const WILLETS = {
-     lng: -75.35164810207202,
-     lat: 39.905969900531005
- };
+
+ const BEARDSLEY = {
+    lng: -75.35483304809978,
+    lat: 39.90680644906328
+};
+
+const SINGER = {
+    lng: -75.35397655974329,
+    lat: 39.90744045787755
+};
+
+const MCCABE = {
+    lng: -75.35268525789385,
+    lat: 39.905496621905044
+};
+
+const WILLETS = {
+    lng: -75.35164810207202,
+    lat: 39.905969900531005
+};
+
+const MERTZ = {
+    lng: -75.35149093090779,
+    lat: 39.90393404329635
+};
+
+const SHARPLES = {
+    lng: -75.3537541872761,
+    lat: 39.903531810128854
+};
+
+const MATCHBOX = {
+    lng: -75.35518347233639,
+    lat: 39.901490073237
+};
+
  const PPR = {
      lng: -75.35161580207222,
      lat: 39.90009680278654
@@ -152,7 +201,7 @@
          alert("Error: Invalid building!");
      }
 
-     location_list = [startCoord, MARY_LYONS, PPR, SCIENCE_CENTER];
+     location_list = [startCoord, MATCHBOX];
 
      callParameters = {
          key: API_KEY,
