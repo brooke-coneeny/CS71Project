@@ -5,7 +5,8 @@ function sendRequestForELocation(sLocation, miles) {
         $("#route-to-take").text("Route: " + sLocation + " to " + this.responseText);
       }
     };
-    xhttp.open("GET", "/" + sLocation + miles, true);
+    const url = "http://localhost:8090/get-path/\"Clothier_Hall\"/2";
+    xhttp.open("GET", url, true);
     xhttp.send();
   }
 
@@ -18,6 +19,7 @@ function sendRequestForELocation(sLocation, miles) {
         }
       }
     };
-    xhttp.open("GET", "/get-locations", true);
+    const url = "http://localhost:8090/get-path/\"Clothier_Hall\"/2";
+    xhttp.open("GET", url, true);
     xhttp.send();
   }
