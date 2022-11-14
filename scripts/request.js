@@ -6,7 +6,10 @@ function sendRequestForELocation(sLocation, miles) {
         listLoc = this.responseText.split(",");
       }
     };
-    xhttp.open("GET", "/'" + sLocation + "'/" + miles, true);
+    // xhttp.open("GET", "/'" + sLocation + "'/" + miles, true);
+    // xhttp.send();
+    const url = "http://localhost:8090/get-path/\"Clothier_Hall\"/2";
+    xhttp.open("GET", url, true);
     xhttp.send();
     return listLoc;
   }
