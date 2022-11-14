@@ -1,7 +1,6 @@
 var miles;
 var startLocation;
 var endLocation = "Science Center";
-var listLoc = [];
 
 $("#open-take-a-walk").click(function(){
     $("#log-in").collapse('hide');
@@ -33,9 +32,7 @@ $("#confirm").click(function() {
     if($.isNumeric(miles)) {
         $("#not-a-number").hide();
         $("#take-a-walk").collapse('toggle');
-        listLoc = sendRequestForELocation(startLocation, miles);
-        display_route(miles, startLocation, listLoc);
-        appendPath(listLoc);
+        sendRequestForELocation(startLocation, miles);
     } else {
         $("#not-a-number").show();
     }
@@ -64,10 +61,13 @@ $("#walk-complete").click(function(){
 });
 
 function appendPath(path, miles) {
+    $("#distance-to-travel").empty();
+    $("#route-to-take").empty();
+    $("#route-complete").empty();
     $("#distance-to-travel").append("<p class='route-text'>You will be walking for " + miles + "!</p>");
     $("#route-to-take").append("<p class='route-text'>You will be walking to these locations</p>");
     $("#route-to-take").append("<ol>");
-    for(var i = 0; i < path.length(); i++) {
+    for(var i = 0; i < path.length; i++) {
         $("#route-to-take").append("<li class='route-text'>" + path[i] + "</li>");
     }
     $("#route-to-take").append("</ol>");
