@@ -15,7 +15,6 @@ import java.util.Map.Entry;
 @RestController
 @RequestMapping
 public class sign_in {
-    // UNDER HILL IS MISSING A NEIGHBOR
     @PostMapping("/sign-in/{username}/{password}")
     public String createUser(@PathVariable("username") String username, @PathVariable("password") String password)
             throws SQLException {
