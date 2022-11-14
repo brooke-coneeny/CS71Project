@@ -16,7 +16,7 @@ $("#parrish").click(function() {
 });
 
 $("#ml").click(function() {
-    $("#dropdownMenuButton").text("Mary Lyons");
+    $("#dropdownMenuButton").text("Clothier_Hall");
 });
 
 $("#willets").click(function() {

@@ -1,5 +1,6 @@
 package swat.moves.api;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +18,7 @@ import java.util.Map.Entry;
 public class create_path {
 //UNDER HILL IS MISSING A NEIGHBOR
 //check visited 
+    @CrossOrigin
     @GetMapping("/get-path/{start}/{distance}")
     public String getLocations(@PathVariable("start") String start, @PathVariable("distance") float distance) throws SQLException {
         String location = "";
