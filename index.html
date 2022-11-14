@@ -22,23 +22,21 @@
 
       <div id="navigation">
         <div id="quest-button">
-          <button class="btn btn-primary">
-            Quests
-          </button>
+          <span id="name">Guest</span>
         </div>
 
         <div id="take-a-walk-button">
-          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#take-a-walk" aria-expanded="false">
+          <button class="btn btn-primary" id="open-take-a-walk" type="button" data-toggle="collapse" data-target="#take-a-walk" aria-expanded="false">
             Take a walk
           </button>
         </div>
 
-        <div id="account-info">
-          <button class="btn btn-primary">
+        <div id="account-buttons">
+          <button class="btn btn-primary" id="open-log-in" type="button" data-toggle="collapse" data-target="#log-in" aria-expanded="false">
             Log In
           </button>
-          <button class="btn btn-primary">
-            Account Info
+          <button class="btn btn-primary" id="sign-out">
+            Sign Out
           </button>
         </div>
       </div>
@@ -48,14 +46,21 @@
           <!-- Start of the collapsible "Take A Walk" Input Form  -->
           <div class="dropdown" id="exercise-info">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Science Center
+              Hallowell/Danawell/Wharton
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a id="science-center" class="dropdown-item" href="#">Science Center</a>
-              <a id="parrish" class="dropdown-item" href="#">Parrish</a>
-              <a id="ml" class="dropdown-item" href="#">Mary Lyons</a>
-              <a id="willets" class="dropdown-item" href="#">Willets</a>
-              <a id="nppr" class="dropdown-item" href="#">PPR Apartments</a>
+              <a id="science-center" class="dropdown-item" href="#">Hallowell/Danawell/Wharton</a>
+              <a id="parrish" class="dropdown-item" href="#">Clothier</a>
+              <a id="ml" class="dropdown-item" href="#">Kohlberg/Underhill</a>
+              <a id="willets" class="dropdown-item" href="#">Science Center/Cornell</a>
+              <a id="nppr" class="dropdown-item" href="#">Beardsley/Pearson/Trotter</a>
+              <a id="singer" class="dropdown-item" href="#">Singer</a>
+              <a id="McCabe_Library" class="dropdown-item" href="#">McCabe</a>
+              <a id="Willets_Hall/Worth_Hall" class="dropdown-item" href="#">Willets/Worth</a>
+              <a id="David_Kemp_Hall/Alice_Paul_Hall/Mertz" class="dropdown-item" href="#">DK/AP/Mertz</a>
+              <a id="Sharples_Dining_Hall" class="dropdown-item" href="#">Sharples</a>
+              <a id="Pittenger_Hall/Palmer_Hall/Roberts_Hall/NPPR_Apartments" class="dropdown-item" href="#">PPR/NPPR</a>
+              <a id="Matchbox" class="dropdown-item" href="#">Matchbox</a>
             </div>
           </div>
           
@@ -71,6 +76,22 @@
           <!-- End of the collapsible "Take A Walk" Input Form  -->
         </div>
       </div>
+
+      <div class="collapse" id="log-in">
+        <div id="log-in-section" class="card card-body">
+          <div id="enter-info">
+            <div class="input-group mb-3" id="user-pass">
+              <input id="username" type="text" class="form-control" placeholder="Enter your username">
+            </div>
+            <div class="input-group mb-3" id="user-pass">
+              <input id="password" type="text" class="form-control" placeholder="Enter your password">
+            </div>
+            <p id="not-correct-info">Incorrect username or password!</p>
+          </div>
+
+          <button class="btn btn-secondary" id="log-in-button">Log In</button>
+        </div>
+      </div>
       
       <div class="map-info">
         <div id="map" class="map">
@@ -79,11 +100,11 @@
       </div>
 
       <div class="route-info">
-        <div>
-          <span id="distance-to-travel"></span>
+        <div id="distance-to-travel">
         </div>
-        <div>
-          <span id="route-to-take"></span>
+        <div id="route-to-take">
+        </div>
+        <div id="route-complete">
         </div>
       </div>
 
@@ -105,5 +126,6 @@
     <!-- Custom JavaScript -->
     <script src="scripts/main.js"></script>
     <script src="scripts/request.js"></script>
+    <script src="scripts/tomtom.js"></script>
   </body>
 </html>
