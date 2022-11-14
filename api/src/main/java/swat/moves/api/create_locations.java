@@ -2,6 +2,10 @@ package swat.moves.api;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -12,13 +16,17 @@ import java.util.*;
 @RestController
 @RequestMapping
 public class create_locations {
+  
     @PostMapping("/create-locations")
-    public void createLocations() throws SQLException{
+    public void createLocations() throws SQLException, IOException{
+      Properties prop=new Properties();
+      FileInputStream ip= new FileInputStream("api/src/config.properties");
+      prop.load(ip);
         try {
-          Class.forName("org.postgresql.Driver");
+          Class.forName(prop.getProperty("driver"));
           Connection c = null;
-          c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/swatmoves",
-          "postgres", "admin");
+          c = DriverManager.getConnection(prop.getProperty("url"),
+          prop.getProperty("username"), prop.getProperty("password"));
           System.out.println("Opened database successfully");
           PreparedStatement pstmt = c.prepareStatement("drop table if EXISTS locations; Create table locations (location varchar(400));");
           pstmt.executeUpdate();
