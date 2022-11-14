@@ -18,7 +18,6 @@ import java.util.Map.Entry;
 public class create_path {
 //UNDER HILL IS MISSING A NEIGHBOR
     @CrossOrigin(maxAge = 3600)
-    
     @GetMapping("/get-path/{start}/{distance}")
     public String getLocations(@PathVariable("start") String start, @PathVariable("distance") float distance) throws SQLException {
         
