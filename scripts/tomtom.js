@@ -174,6 +174,7 @@ const MATCHBOX = {
  }
  
  function display_route(miles, startLoc, locationList = []) {
+    coordList = [];
      map = tt.map({
          key: API_KEY,
          container: 'map',
@@ -185,38 +186,53 @@ const MATCHBOX = {
      map.addControl(new tt.FullscreenControl());
      map.addControl(new tt.NavigationControl());
  
-     var startCoord;
-     startLoc = startLoc.trim();
-     if (startLoc === "Science Center") {
-         startCoord = SCIENCE_CENTER;
-     } else if (startLoc === "Parrish") {
-         startCoord = PARRISH_HALL;
-     } else if (startLoc === "Mary Lyons") {
-         startCoord = MARY_LYONS;
-     } else if (startLoc === "Willets") {
-         startCoord = WILLETS;
-     } else if (startLoc === "PPR Apartments") {
-         startCoord = PPR;
-     } else {
-         alert("Error: Invalid building!");
+     for (let i = 0; i < locationList.length; i++) {
+        let loc = locationList[i];
+        if (loc === 'Dana_Hall/Hallowell_Hall/Danawell_Hall/Wharton') {
+            coordList.push(DANAWELL);
+        } else if (loc === 'Clothier_Hall') {
+            coordList.push(CLOTHIER);
+        } else if (loc === 'Underhill_Music_Library/Kohlberg_Hall') {
+            coordList.push(KOHLBERG);
+        } else if (loc === 'Cornell_Library/Science_Center') {
+            coordList.push(SCIENCE_CENTER);
+        } else if (loc === 'Beardsley_Hall/Pearson Hall/Trotter_Hall') {
+            coordList.push(BEARDSLEY);
+        } else if (loc === 'Singer_Hall') {
+            coordList.push(SINGER);
+        } else if (loc === 'McCabe_Library') {
+            coordList.push(MCCABE);
+        } else if (loc === 'Willets_Hall/Worth_Hall') {
+            coordList.push(WILLETS);
+        } else if (loc === 'David_Kemp_Hall/Alice_Paul_Hall/Mertz') {
+            coordList.push(MERTZ);
+        } else if (loc === 'Sharples_Dining_Hall') {
+            coordList.push(SHARPLES);
+        } else if (loc === 'Matchbox') {
+            coordList.push(MATCHBOX);
+        } else if (loc === 'Pittenger_Hall/Palmer_Hall/Roberts_Hall/NPPR_Apartments') {
+            coordList.push(PPR);
+        } else {
+            alert("Building not found!");
+        }
      }
 
-     location_list = [startCoord, MATCHBOX];
+     
 
      callParameters = {
          key: API_KEY,
          maxAlternatives: 0,
          traffic: false,
-         locations: location_list,
+         locations: coordList,
          travelMode: 'pedestrian'
      };
+     var marker = new tt.Marker({
+        draggable: false
+    }).setLngLat(coordList[0]).addTo(map);
 
-     // Put a marker on each waypoint
-     for (let i = 0; i < location_list.length; i++) {
-        var marker = new tt.Marker({
-            draggable: false
-        }).setLngLat(location_list[i]).addTo(map);
-     }
+    var marker = new tt.Marker({
+        draggable: false
+    }).setLngLat(coordList[coordList.length - 1]).addTo(map);
      
      handleCalculateRouteRequest();
  }
