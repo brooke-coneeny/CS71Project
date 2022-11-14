@@ -12,7 +12,6 @@ function sendRequestForELocation(sLocation, miles) {
           listLoc[i] = listLoc[i].split('"').join('');
         }
         console.log(listLoc);
-        alert(listLoc);
         display_route(miles, sLocation, listLoc);
         appendPath(listLoc, miles);
       }
