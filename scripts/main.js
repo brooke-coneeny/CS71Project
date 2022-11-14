@@ -7,24 +7,48 @@ $("#open-take-a-walk").click(function(){
 });
 
 $("#science-center").click(function() {
-    $("#dropdownMenuButton").text("Science Center");
+    $("#dropdownMenuButton").text("Dana_Hall/Hallowell_Hall/Danawell_Hall/Wharton");
 });
 
 $("#parrish").click(function() {
-    $("#dropdownMenuButton").text("Parrish");
+    $("#dropdownMenuButton").text("Clothier_Hall");
 });
 
 $("#ml").click(function() {
-    $("#dropdownMenuButton").text("Mary Lyons");
+    $("#dropdownMenuButton").text("Underhill_Music_Library/Kohlberg_Hall");
 });
 
 $("#willets").click(function() {
-    $("#dropdownMenuButton").text("Willets");
+    $("#dropdownMenuButton").text("Cornell_Library/Science_Center");
 });
 
 $("#nppr").click(function() {
-    $("#dropdownMenuButton").text("PPR Apartments");
+    $("#dropdownMenuButton").text("Beardsley_Hall/Pearson Hall/Trotter_Hall");
 });
+
+$("#singer").click(function() {
+    $("#dropdownMenuButton").text("Singer_Hall");
+});
+$("#McCabe_Library").click(function() {
+    $("#dropdownMenuButton").text("McCabe_Library");
+});
+$("#Willets_Hall/Worth_Hall").click(function() {
+    $("#dropdownMenuButton").text("Willets_Hall/Worth_Hall");
+});
+$("#David_Kemp_Hall/Alice_Paul_Hall/Mertz").click(function() {
+    $("#dropdownMenuButton").text("David_Kemp_Hall/Alice_Paul_Hall/Mertz");
+});
+$("#Sharples_Dining_Hall").click(function() {
+    $("#dropdownMenuButton").text("Sharples_Dining_Hall");
+});
+$("#Pittenger_Hall/Palmer_Hall/Roberts_Hall/NPPR_Apartments").click(function() {
+    $("#dropdownMenuButton").text("Pittenger_Hall/Palmer_Hall/Roberts_Hall/NPPR_Apartments");
+});
+$("#Matchbox").click(function() {
+    $("#dropdownMenuButton").text("Matchbox");
+});
+
+
 
 $("#confirm").click(function() {
     miles = $("#miles").val();
