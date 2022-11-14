@@ -1,5 +1,6 @@
 package swat.moves.api;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,9 +17,11 @@ import java.util.Map.Entry;
 @RequestMapping
 public class create_path {
 //UNDER HILL IS MISSING A NEIGHBOR
-//check visited 
+    @CrossOrigin(maxAge = 3600)
+    
     @GetMapping("/get-path/{start}/{distance}")
     public String getLocations(@PathVariable("start") String start, @PathVariable("distance") float distance) throws SQLException {
+        
         String location = "";
         System.out.println(start);
         System.out.println(distance);
@@ -39,7 +42,7 @@ public class create_path {
         try {
             Class.forName("org.postgresql.Driver");
             Connection c = null;
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/swatmoves",
+            c = DriverManager.getConnection("jdbc:postgresql://localhost:5433/swatmoves",
                     "postgres", "admin");
             // System.out.println("Opened database successfully");
             while (distance >= 0) {
