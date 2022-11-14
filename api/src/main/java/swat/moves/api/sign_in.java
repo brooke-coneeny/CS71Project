@@ -16,7 +16,6 @@ import java.util.Map.Entry;
 @RequestMapping
 public class sign_in {
     // UNDER HILL IS MISSING A NEIGHBOR
-    // check visited
     @PostMapping("/sign-in/{username}/{password}")
     public String createUser(@PathVariable("username") String username, @PathVariable("password") String password)
             throws SQLException {
@@ -37,9 +36,11 @@ public class sign_in {
                 // Set exists equal to the user's password 
                 exists = rs.getString("password");
             }
+            System.out.println(exists);
+            System.out.println(password);
 
             // Check if associated password  
-            if(exists != password){
+            if(exists.equals(password)){
                 return "Correct login";
             }
 
