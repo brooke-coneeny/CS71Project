@@ -188,29 +188,29 @@ const MATCHBOX = {
  
      for (let i = 0; i < locationList.length; i++) {
         let loc = locationList[i];
-        if (loc === 'Dana_Hall/Hallowell_Hall/Danawell_Hall/Wharton') {
+        if (loc === 'Dana_Hall-Hallowell_Hall-Danawell_Hall-Wharton') {
             coordList.push(DANAWELL);
         } else if (loc === 'Clothier_Hall') {
             coordList.push(CLOTHIER);
-        } else if (loc === 'Underhill_Music_Library/Kohlberg_Hall') {
+        } else if (loc === 'Underhill_Music_Library-Kohlberg_Hall') {
             coordList.push(KOHLBERG);
-        } else if (loc === 'Cornell_Library/Science_Center') {
+        } else if (loc === 'Cornell_Library-Science_Center') {
             coordList.push(SCIENCE_CENTER);
-        } else if (loc === 'Beardsley_Hall/Pearson Hall/Trotter_Hall') {
+        } else if (loc === 'Beardsley_Hall-Pearson Hall-Trotter_Hall') {
             coordList.push(BEARDSLEY);
         } else if (loc === 'Singer_Hall') {
             coordList.push(SINGER);
         } else if (loc === 'McCabe_Library') {
             coordList.push(MCCABE);
-        } else if (loc === 'Willets_Hall/Worth_Hall') {
+        } else if (loc === 'Willets_Hall-Worth_Hall') {
             coordList.push(WILLETS);
-        } else if (loc === 'David_Kemp_Hall/Alice_Paul_Hall/Mertz') {
+        } else if (loc === 'David_Kemp_Hall-Alice_Paul_Hall-Mertz') {
             coordList.push(MERTZ);
         } else if (loc === 'Sharples_Dining_Hall') {
             coordList.push(SHARPLES);
         } else if (loc === 'Matchbox') {
             coordList.push(MATCHBOX);
-        } else if (loc === 'Pittenger_Hall/Palmer_Hall/Roberts_Hall/NPPR_Apartments') {
+        } else if (loc === 'Pittenger_Hall-Palmer_Hall-Roberts_Hall-NPPR_Apartments') {
             coordList.push(PPR);
         } else {
             alert("Building not found!");
