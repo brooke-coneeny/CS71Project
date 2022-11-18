@@ -14,41 +14,41 @@ import java.util.Map.Entry;
 
 @RestController
 @RequestMapping
-public class create_user {
-    // UNDER HILL IS MISSING A NEIGHBOR
-    // check visited
-    @PostMapping("/create-user/{username}/{password}/{name}")
-    public String createUser(@PathVariable("username") String username, @PathVariable("password") String password,
-            @PathVariable("name") String name) throws SQLException {
+public class sign_in {
+    @PostMapping("/sign-in/{username}/{password}")
+    public String createUser(@PathVariable("username") String username, @PathVariable("password") String password)
+            throws SQLException {
             String exists = "";
         try {
             Class.forName("org.postgresql.Driver");
             Connection c = null;
             c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/swatmoves",
                     "postgres", "admin");
-           
+
+            // Select user information from table that matches the username and perform query 
             String statement = String.format("SELECT * FROM login where username = '%s'", username);
-            System.out.println(statement);
             PreparedStatement pstmt = c.prepareStatement(statement);
             ResultSet rs = pstmt.executeQuery();
+
             exists = "no";
-                while (rs.next()) {
-                    exists = rs.getString("username");
-                }
-            
-            System.out.println(exists);
-            if(exists == "no"){
-                statement = String.format("Insert into login (username, password, name) values('%s', '%s', '%s')", username, password, name);
-                pstmt = c.prepareStatement(statement);
-                pstmt.executeUpdate();
+            while (rs.next()) {
+                // Set exists equal to the user's password 
+                exists = rs.getString("password");
             }
+            System.out.println(exists);
+            System.out.println(password);
+
+            // Check if associated password  
+            if(exists.equals(password)){
+                return "Correct login";
+            }
+
              
         } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
-        return "success";
+        return "Invalid Login Information";
 
     }
 }

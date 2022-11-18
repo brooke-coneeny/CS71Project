@@ -6,32 +6,64 @@ $("#open-take-a-walk").click(function(){
     $("#log-in").collapse('hide');
 });
 
-$("#science-center").click(function() {
-    $("#dropdownMenuButton").text("Science Center");
+$("#Dana_Hall/Hallowell_Hall/Danawell_Hall/Wharton").click(function() {
+    $("#dropdownMenuButton").text("Dana_Hall/Hallowell_Hall/Danawell_Hall/Wharton");
 });
 
-$("#parrish").click(function() {
-    $("#dropdownMenuButton").text("Parrish");
+$("#Clothier_Hall").click(function() {
+    $("#dropdownMenuButton").text("Clothier_Hall");
 });
 
-$("#ml").click(function() {
-    $("#dropdownMenuButton").text("Mary Lyons");
+$("#Underhill_Music_Library/Kohlberg_Hall").click(function() {
+    $("#dropdownMenuButton").text("Underhill_Music_Library/Kohlberg_Hall");
 });
 
-$("#willets").click(function() {
-    $("#dropdownMenuButton").text("Willets");
+$("#Cornell_Library/Science_Center").click(function() {
+    $("#dropdownMenuButton").text("Cornell_Library/Science_Center");
 });
 
-$("#nppr").click(function() {
-    $("#dropdownMenuButton").text("PPR Apartments");
+$("#Beardsley_Hall/Pearson Hall/Trotter_Hall").click(function() {
+    $("#dropdownMenuButton").text("Beardsley_Hall/Pearson Hall/Trotter_Hall");
 });
+
+$("#Singer_Hall").click(function() {
+    $("#dropdownMenuButton").text("Singer_Hall");
+});
+
+$("#McCabe_Library").click(function() {
+    $("#dropdownMenuButton").text("McCabe_Library");
+});
+
+$("#Willets_Hall/Worth_Hall").click(function() {
+    $("#dropdownMenuButton").text("Willets_Hall/Worth_Hall");
+});
+
+$("#David_Kemp_Hall/Alice_Paul_Hall/Mertz").click(function() {
+    $("#dropdownMenuButton").text("David_Kemp_Hall/Alice_Paul_Hall/Mertz");
+});
+
+$("#Sharples_Dining_Hall").click(function() {
+    $("#dropdownMenuButton").text("Sharples_Dining_Hall");
+});
+
+$("#Pittenger_Hall/Palmer_Hall/Roberts_Hall/NPPR_Apartments").click(function() {
+    $("#dropdownMenuButton").text("Pittenger_Hall/Palmer_Hall/Roberts_Hall/NPPR_Apartments");
+});
+
+$("#Matchbox").click(function() {
+    $("#dropdownMenuButton").text("Matchbox");
+});
+
+
 
 $("#confirm").click(function() {
+    console.log("TEST");
     miles = $("#miles").val();
     startLocation = $("#dropdownMenuButton").text();
     if($.isNumeric(miles)) {
         $("#not-a-number").hide();
         $("#take-a-walk").collapse('toggle');
+        alert("Hello");
         sendRequestForELocation(startLocation, miles);
     } else {
         $("#not-a-number").show();
