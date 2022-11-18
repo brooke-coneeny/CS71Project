@@ -3,6 +3,7 @@ function sendRequestForELocation(sLocation, miles) {
     var xhttp = new XMLHttpRequest();
     //const url = "http://localhost:8080/get-path/\"Clothier_Hall\"/2";
     //xhttp.open("GET", url, true);
+    sLocation = sLocation.replace(/\s/g, '');
     const url = ("http://localhost:8080/get-path/\"" + sLocation + "\"/" + miles);
     console.log(url);
     xhttp.open("GET", url, true);
