@@ -1,50 +1,55 @@
 var miles;
 var startLocation;
 var endLocation = "Science Center";
-var listLoc = [];
 
 $("#open-take-a-walk").click(function(){
     $("#log-in").collapse('hide');
 });
 
-$("#science-center").click(function() {
-    $("#dropdownMenuButton").text("Dana_Hall/Hallowell_Hall/Danawell_Hall/Wharton");
+$("#DanaHall-HallowellHall-DanawellHall-Wharton").click(function() {
+    $("#dropdownMenuButton").text("Dana_Hall-Hallowell_Hall-Danawell_Hall-Wharton");
 });
 
-$("#parrish").click(function() {
+$("#ClothierHall").click(function() {
     $("#dropdownMenuButton").text("Clothier_Hall");
 });
 
-$("#ml").click(function() {
-    $("#dropdownMenuButton").text("Underhill_Music_Library/Kohlberg_Hall");
+$("#UnderhillMusicLibrary-KohlbergHall").click(function() {
+    $("#dropdownMenuButton").text("Underhill_Music_Library-Kohlberg_Hall");
 });
 
-$("#willets").click(function() {
-    $("#dropdownMenuButton").text("Cornell_Library/Science_Center");
+$("#CornellLibrary-ScienceCenter").click(function() {
+    $("#dropdownMenuButton").text("Cornell_Library-Science_Center");
 });
 
-$("#nppr").click(function() {
-    $("#dropdownMenuButton").text("Beardsley_Hall/Pearson Hall/Trotter_Hall");
+$("#BeardsleyHall-PearsonHall-TrotterHall").click(function() {
+    $("#dropdownMenuButton").text("Beardsley_Hall-Pearson_Hall-Trotter_Hall");
 });
 
-$("#singer").click(function() {
+$("#SingerHall").click(function() {
     $("#dropdownMenuButton").text("Singer_Hall");
 });
-$("#McCabe_Library").click(function() {
+
+$("#McCabeLibrary").click(function() {
     $("#dropdownMenuButton").text("McCabe_Library");
 });
-$("#Willets_Hall/Worth_Hall").click(function() {
-    $("#dropdownMenuButton").text("Willets_Hall/Worth_Hall");
+
+$("#WilletsHall-WorthHall").click(function() {
+    $("#dropdownMenuButton").text("Willets_Hall-Worth_Hall");
 });
-$("#David_Kemp_Hall/Alice_Paul_Hall/Mertz").click(function() {
-    $("#dropdownMenuButton").text("David_Kemp_Hall/Alice_Paul_Hall/Mertz");
+
+$("#DavidKempHall-AlicePaulHall-Mertz").click(function() {
+    $("#dropdownMenuButton").text("David_Kemp_Hall-Alice_Paul_Hall-Mertz");
 });
-$("#Sharples_Dining_Hall").click(function() {
+
+$("#SharplesDiningHall").click(function() {
     $("#dropdownMenuButton").text("Sharples_Dining_Hall");
 });
-$("#Pittenger_Hall/Palmer_Hall/Roberts_Hall/NPPR_Apartments").click(function() {
-    $("#dropdownMenuButton").text("Pittenger_Hall/Palmer_Hall/Roberts_Hall/NPPR_Apartments");
+
+$("#PittengerHall-PalmerHall-RobertsHall-NPPRApartments").click(function() {
+    $("#dropdownMenuButton").text("Pittenger_Hall-Palmer_Hall-Roberts_Hall-NPPR_Apartments");
 });
+
 $("#Matchbox").click(function() {
     $("#dropdownMenuButton").text("Matchbox");
 });
@@ -52,14 +57,14 @@ $("#Matchbox").click(function() {
 
 
 $("#confirm").click(function() {
+    console.log("TEST");
     miles = $("#miles").val();
     startLocation = $("#dropdownMenuButton").text();
     if($.isNumeric(miles)) {
         $("#not-a-number").hide();
         $("#take-a-walk").collapse('toggle');
-        listLoc = sendRequestForELocation(startLocation, miles);
-        display_route(miles, startLocation, listLoc);
-        appendPath(listLoc);
+        alert("Hello");
+        sendRequestForELocation(startLocation, miles);
     } else {
         $("#not-a-number").show();
     }
@@ -88,10 +93,13 @@ $("#walk-complete").click(function(){
 });
 
 function appendPath(path, miles) {
+    $("#distance-to-travel").empty();
+    $("#route-to-take").empty();
+    $("#route-complete").empty();
     $("#distance-to-travel").append("<p class='route-text'>You will be walking for " + miles + "!</p>");
     $("#route-to-take").append("<p class='route-text'>You will be walking to these locations</p>");
     $("#route-to-take").append("<ol>");
-    for(var i = 0; i < path.length(); i++) {
+    for(var i = 0; i < path.length; i++) {
         $("#route-to-take").append("<li class='route-text'>" + path[i] + "</li>");
     }
     $("#route-to-take").append("</ol>");
