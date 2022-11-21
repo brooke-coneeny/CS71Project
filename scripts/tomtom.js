@@ -124,7 +124,6 @@ const MATCHBOX = {
              '</div>'
          )
          .setMaxWidth('none');
-     popup.addTo(map);
  }
  var callParameters = {
      key: API_KEY,

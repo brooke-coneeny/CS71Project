@@ -61,7 +61,6 @@ $("#confirm").click(function() {
     startLocation = $("#dropdownMenuButton").text();
     $("#dropdownMenuButton").text("Dana_Hall-Hallowell_Hall-Danawell_Hall-Wharton");
     endAtStart = $("#flexCheckDefault").is(':checked');
-    alert(endAtStart);
     if($.isNumeric(miles)) {
         $("#not-a-number").hide();
         $("#take-a-walk").collapse('toggle');
