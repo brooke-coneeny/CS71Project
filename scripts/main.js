@@ -75,7 +75,6 @@ $("#log-in-button").click(function(){
     $("#username").val("");
     var password = $("#password").val();
     $("#password").val("");
-    //sendRequestForLogIn(username, password);
     $("#name").text(username);
     $("#log-in").collapse('toggle');
     $("#open-log-in").hide();
