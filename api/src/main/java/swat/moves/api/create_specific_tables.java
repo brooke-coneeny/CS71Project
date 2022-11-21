@@ -22,7 +22,7 @@ public class create_specific_tables {
           c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/swatmoves",
           "postgres", "admin");
           //list of tables
-          List<String> locations = Arrays.asList("Dana_Hall-Hallowell_Hall-Danawell_Hall-Wharton","Clothier_Hall","Underhill_Music_Library-Kohlberg_Hall","Cornell_Library-Science_Center", "Beardsley_Hall-Pearson Hall-Trotter_Hall","Singer_Hall", "McCabe_Library", "Willets_Hall-Worth_Hall","David_Kemp_Hall-Alice_Paul_Hall-Mertz","Sharples_Dining_Hall","Matchbox","Pittenger_Hall-Palmer_Hall-Roberts_Hall-NPPR_Apartments");
+          List<String> locations = Arrays.asList("Dana_Hall-Hallowell_Hall-Danawell_Hall-Wharton","Clothier_Hall","Underhill_Music_Library-Kohlberg_Hall","Cornell_Library-Science_Center", "Beardsley_Hall-Pearson_Hall-Trotter_Hall","Singer_Hall", "McCabe_Library", "Willets_Hall-Worth_Hall","David_Kemp_Hall-Alice_Paul_Hall-Mertz","Sharples_Dining_Hall","Matchbox","Pittenger_Hall-Palmer_Hall-Roberts_Hall-NPPR_Apartments");
 
           for (String location : locations){
             String statement = "drop table if EXISTS \"" + location + "\"; Create table \"" + location + "\" (location varchar(400), distance FLOAT);";
@@ -37,7 +37,7 @@ public class create_specific_tables {
           pstmt.executeUpdate();
           pstmt = c.prepareStatement("insert into \"Dana_Hall-Hallowell_Hall-Danawell_Hall-Wharton\" (location,distance) values('\"Cornell_Library-Science_Center\"', '0.3')");
           pstmt.executeUpdate();
-          pstmt = c.prepareStatement("insert into \"Dana_Hall-Hallowell_Hall-Danawell_Hall-Wharton\" (location,distance) values('\"Beardsley_Hall-Pearson Hall-Trotter_Hall\"', '0.4')");
+          pstmt = c.prepareStatement("insert into \"Dana_Hall-Hallowell_Hall-Danawell_Hall-Wharton\" (location,distance) values('\"Beardsley_Hall-Pearson_Hall-Trotter_Hall\"', '0.4')");
           pstmt.executeUpdate();
           pstmt = c.prepareStatement("insert into \"Dana_Hall-Hallowell_Hall-Danawell_Hall-Wharton\" (location,distance) values('\"Singer_Hall\"', '0.4')");
           pstmt.executeUpdate();
@@ -61,7 +61,7 @@ public class create_specific_tables {
           pstmt.executeUpdate();
           pstmt = c.prepareStatement("insert into \"Clothier_Hall\" (location,distance) values('\"Cornell_Library-Science_Center\"', '0.2')");
           pstmt.executeUpdate();
-          pstmt = c.prepareStatement("insert into \"Clothier_Hall\" (location,distance) values('\"Beardsley_Hall-Pearson Hall-Trotter_Hall\"', '0.2')");
+          pstmt = c.prepareStatement("insert into \"Clothier_Hall\" (location,distance) values('\"Beardsley_Hall-Pearson_Hall-Trotter_Hall\"', '0.2')");
           pstmt.executeUpdate();
           pstmt = c.prepareStatement("insert into \"Clothier_Hall\" (location,distance) values('\"Singer_Hall\"', '0.3')");
           pstmt.executeUpdate();
@@ -85,7 +85,7 @@ public class create_specific_tables {
           pstmt.executeUpdate();
           pstmt = c.prepareStatement("insert into \"Underhill_Music_Library-Kohlberg_Hall\" (location,distance) values('\"Cornell_Library-Science_Center\"', '0.05')");
           pstmt.executeUpdate();
-          pstmt = c.prepareStatement("insert into \"Underhill_Music_Library-Kohlberg_Hall\" (location,distance) values('\"Beardsley_Hall-Pearson Hall-Trotter_Hall\"', '0.1')");
+          pstmt = c.prepareStatement("insert into \"Underhill_Music_Library-Kohlberg_Hall\" (location,distance) values('\"Beardsley_Hall-Pearson_Hall-Trotter_Hall\"', '0.1')");
           pstmt.executeUpdate();
           pstmt = c.prepareStatement("insert into \"Underhill_Music_Library-Kohlberg_Hall\" (location,distance) values('\"Singer_Hall\"', '0.2')");
           pstmt.executeUpdate();
@@ -109,7 +109,7 @@ public class create_specific_tables {
           pstmt.executeUpdate();
           pstmt = c.prepareStatement("insert into \"Cornell_Library-Science_Center\" (location,distance) values('\"Underhill_Music_Library-Kohlberg_Hall\"', '0.05')");
           pstmt.executeUpdate();
-          pstmt = c.prepareStatement("insert into \"Cornell_Library-Science_Center\" (location,distance) values('\"Beardsley_Hall-Pearson Hall-Trotter_Hall\"', '0.05')");
+          pstmt = c.prepareStatement("insert into \"Cornell_Library-Science_Center\" (location,distance) values('\"Beardsley_Hall-Pearson_Hall-Trotter_Hall\"', '0.05')");
           pstmt.executeUpdate();
           pstmt = c.prepareStatement("insert into \"Cornell_Library-Science_Center\" (location,distance) values('\"Singer_Hall\"', '0.2')");
           pstmt.executeUpdate();
@@ -127,27 +127,27 @@ public class create_specific_tables {
           pstmt.executeUpdate();
 
           //insert data 
-          pstmt = c.prepareStatement("insert into \"Beardsley_Hall-Pearson Hall-Trotter_Hall\" (location,distance) values('\"Dana_Hall-Hallowell_Hall-Danawell_Hall-Wharton\"', '0.4')");
+          pstmt = c.prepareStatement("insert into \"Beardsley_Hall-Pearson_Hall-Trotter_Hall\" (location,distance) values('\"Dana_Hall-Hallowell_Hall-Danawell_Hall-Wharton\"', '0.4')");
           pstmt.executeUpdate();
-          pstmt = c.prepareStatement("insert into \"Beardsley_Hall-Pearson Hall-Trotter_Hall\" (location,distance) values('\"Clothier_Hall\"', '0.2')");
+          pstmt = c.prepareStatement("insert into \"Beardsley_Hall-Pearson_Hall-Trotter_Hall\" (location,distance) values('\"Clothier_Hall\"', '0.2')");
           pstmt.executeUpdate();
-          pstmt = c.prepareStatement("insert into \"Beardsley_Hall-Pearson Hall-Trotter_Hall\" (location,distance) values('\"Underhill_Music_Library-Kohlberg_Hall\"', '0.1')");
+          pstmt = c.prepareStatement("insert into \"Beardsley_Hall-Pearson_Hall-Trotter_Hall\" (location,distance) values('\"Underhill_Music_Library-Kohlberg_Hall\"', '0.1')");
           pstmt.executeUpdate();
-          pstmt = c.prepareStatement("insert into \"Beardsley_Hall-Pearson Hall-Trotter_Hall\" (location,distance) values('\"Cornell_Library-Science_Center\"', '0.05')");
+          pstmt = c.prepareStatement("insert into \"Beardsley_Hall-Pearson_Hall-Trotter_Hall\" (location,distance) values('\"Cornell_Library-Science_Center\"', '0.05')");
           pstmt.executeUpdate();
-          pstmt = c.prepareStatement("insert into \"Beardsley_Hall-Pearson Hall-Trotter_Hall\" (location,distance) values('\"Singer_Hall\"', '0.01')");
+          pstmt = c.prepareStatement("insert into \"Beardsley_Hall-Pearson_Hall-Trotter_Hall\" (location,distance) values('\"Singer_Hall\"', '0.01')");
           pstmt.executeUpdate();
-          pstmt = c.prepareStatement("insert into \"Beardsley_Hall-Pearson Hall-Trotter_Hall\" (location,distance) values('\"McCabe_Library\"', '0.2')");
+          pstmt = c.prepareStatement("insert into \"Beardsley_Hall-Pearson_Hall-Trotter_Hall\" (location,distance) values('\"McCabe_Library\"', '0.2')");
           pstmt.executeUpdate();
-          pstmt = c.prepareStatement("insert into \"Beardsley_Hall-Pearson Hall-Trotter_Hall\" (location,distance) values('\"Willets_Hall-Worth_Hall\"', '0.3')");
+          pstmt = c.prepareStatement("insert into \"Beardsley_Hall-Pearson_Hall-Trotter_Hall\" (location,distance) values('\"Willets_Hall-Worth_Hall\"', '0.3')");
           pstmt.executeUpdate();
-          pstmt = c.prepareStatement("insert into \"Beardsley_Hall-Pearson Hall-Trotter_Hall\" (location,distance) values('\"David_Kemp_Hall-Alice_Paul_Hall-Mertz\"', '0.3')");
+          pstmt = c.prepareStatement("insert into \"Beardsley_Hall-Pearson_Hall-Trotter_Hall\" (location,distance) values('\"David_Kemp_Hall-Alice_Paul_Hall-Mertz\"', '0.3')");
           pstmt.executeUpdate();
-          pstmt = c.prepareStatement("insert into \"Beardsley_Hall-Pearson Hall-Trotter_Hall\" (location,distance) values('\"Sharples_Dining_Hall\"', '0.3')");
+          pstmt = c.prepareStatement("insert into \"Beardsley_Hall-Pearson_Hall-Trotter_Hall\" (location,distance) values('\"Sharples_Dining_Hall\"', '0.3')");
           pstmt.executeUpdate();
-          pstmt = c.prepareStatement("insert into \"Beardsley_Hall-Pearson Hall-Trotter_Hall\" (location,distance) values('\"Matchbox\"', '0.5')");
+          pstmt = c.prepareStatement("insert into \"Beardsley_Hall-Pearson_Hall-Trotter_Hall\" (location,distance) values('\"Matchbox\"', '0.5')");
           pstmt.executeUpdate();
-          pstmt = c.prepareStatement("insert into \"Beardsley_Hall-Pearson Hall-Trotter_Hall\" (location,distance) values('\"Pittenger_Hall-Palmer_Hall-Roberts_Hall-NPPR_Apartments\"', '0.6')");
+          pstmt = c.prepareStatement("insert into \"Beardsley_Hall-Pearson_Hall-Trotter_Hall\" (location,distance) values('\"Pittenger_Hall-Palmer_Hall-Roberts_Hall-NPPR_Apartments\"', '0.6')");
           pstmt.executeUpdate();
 
           //insert data 
@@ -159,7 +159,7 @@ public class create_specific_tables {
           pstmt.executeUpdate();
           pstmt = c.prepareStatement("insert into \"Singer_Hall\" (location,distance) values('\"Cornell_Library-Science_Center\"', '0.2')");
           pstmt.executeUpdate();
-          pstmt = c.prepareStatement("insert into \"Singer_Hall\" (location,distance) values('\"Beardsley_Hall-Pearson Hall-Trotter_Hall\"', '0.01')");
+          pstmt = c.prepareStatement("insert into \"Singer_Hall\" (location,distance) values('\"Beardsley_Hall-Pearson_Hall-Trotter_Hall\"', '0.01')");
           pstmt.executeUpdate();
           pstmt = c.prepareStatement("insert into \"Singer_Hall\" (location,distance) values('\"McCabe_Library\"', '0.2')");
           pstmt.executeUpdate();
@@ -184,7 +184,7 @@ public class create_specific_tables {
           pstmt.executeUpdate();
           pstmt = c.prepareStatement("insert into \"McCabe_Library\" (location,distance) values('\"Cornell_Library-Science_Center\"', '0.2')");
           pstmt.executeUpdate();
-          pstmt = c.prepareStatement("insert into \"McCabe_Library\" (location,distance) values('\"Beardsley_Hall-Pearson Hall-Trotter_Hall\"', '0.2')");
+          pstmt = c.prepareStatement("insert into \"McCabe_Library\" (location,distance) values('\"Beardsley_Hall-Pearson_Hall-Trotter_Hall\"', '0.2')");
           pstmt.executeUpdate();
           pstmt = c.prepareStatement("insert into \"McCabe_Library\" (location,distance) values('\"Singer_Hall\"', '0.2')");
           pstmt.executeUpdate();
@@ -206,7 +206,7 @@ public class create_specific_tables {
           pstmt.executeUpdate();
           pstmt = c.prepareStatement("insert into \"Willets_Hall-Worth_Hall\" (location,distance) values('\"Cornell_Library-Science_Center\"', '0.3')");
           pstmt.executeUpdate();
-          pstmt = c.prepareStatement("insert into \"Willets_Hall-Worth_Hall\" (location,distance) values('\"Beardsley_Hall-Pearson Hall-Trotter_Hall\"', '0.3')");
+          pstmt = c.prepareStatement("insert into \"Willets_Hall-Worth_Hall\" (location,distance) values('\"Beardsley_Hall-Pearson_Hall-Trotter_Hall\"', '0.3')");
           pstmt.executeUpdate();
           pstmt = c.prepareStatement("insert into \"Willets_Hall-Worth_Hall\" (location,distance) values('\"Singer_Hall\"', '0.3')");
           pstmt.executeUpdate();
@@ -230,7 +230,7 @@ public class create_specific_tables {
           pstmt.executeUpdate();
           pstmt = c.prepareStatement("insert into \"David_Kemp_Hall-Alice_Paul_Hall-Mertz\" (location,distance) values('\"Cornell_Library-Science_Center\"', '0.4')");
           pstmt.executeUpdate();
-          pstmt = c.prepareStatement("insert into \"David_Kemp_Hall-Alice_Paul_Hall-Mertz\" (location,distance) values('\"Beardsley_Hall-Pearson Hall-Trotter_Hall\"', '0.3')");
+          pstmt = c.prepareStatement("insert into \"David_Kemp_Hall-Alice_Paul_Hall-Mertz\" (location,distance) values('\"Beardsley_Hall-Pearson_Hall-Trotter_Hall\"', '0.3')");
           pstmt.executeUpdate();
           pstmt = c.prepareStatement("insert into \"David_Kemp_Hall-Alice_Paul_Hall-Mertz\" (location,distance) values('\"Singer_Hall\"', '0.4')");
           pstmt.executeUpdate();
@@ -254,7 +254,7 @@ public class create_specific_tables {
           pstmt.executeUpdate();
           pstmt = c.prepareStatement("insert into \"Sharples_Dining_Hall\" (location,distance) values('\"Cornell_Library-Science_Center\"', '0.2')");
           pstmt.executeUpdate();
-          pstmt = c.prepareStatement("insert into \"Sharples_Dining_Hall\" (location,distance) values('\"Beardsley_Hall-Pearson Hall-Trotter_Hall\"', '0.3')");
+          pstmt = c.prepareStatement("insert into \"Sharples_Dining_Hall\" (location,distance) values('\"Beardsley_Hall-Pearson_Hall-Trotter_Hall\"', '0.3')");
           pstmt.executeUpdate();
           pstmt = c.prepareStatement("insert into \"Sharples_Dining_Hall\" (location,distance) values('\"Singer_Hall\"', '0.3')");
           pstmt.executeUpdate();
@@ -278,7 +278,7 @@ public class create_specific_tables {
           pstmt.executeUpdate();
           pstmt = c.prepareStatement("insert into \"Pittenger_Hall-Palmer_Hall-Roberts_Hall-NPPR_Apartments\" (location,distance) values('\"Cornell_Library-Science_Center\"', '0.6')");
           pstmt.executeUpdate();
-          pstmt = c.prepareStatement("insert into \"Pittenger_Hall-Palmer_Hall-Roberts_Hall-NPPR_Apartments\" (location,distance) values('\"Beardsley_Hall-Pearson Hall-Trotter_Hall\"', '0.6')");
+          pstmt = c.prepareStatement("insert into \"Pittenger_Hall-Palmer_Hall-Roberts_Hall-NPPR_Apartments\" (location,distance) values('\"Beardsley_Hall-Pearson_Hall-Trotter_Hall\"', '0.6')");
           pstmt.executeUpdate();
           pstmt = c.prepareStatement("insert into \"Pittenger_Hall-Palmer_Hall-Roberts_Hall-NPPR_Apartments\" (location,distance) values('\"Singer_Hall\"', '0.7')");
           pstmt.executeUpdate();
@@ -302,7 +302,7 @@ public class create_specific_tables {
           pstmt.executeUpdate();
           pstmt = c.prepareStatement("insert into \"Matchbox\" (location,distance) values('\"Cornell_Library-Science_Center\"', '0.4')");
           pstmt.executeUpdate();
-          pstmt = c.prepareStatement("insert into \"Matchbox\" (location,distance) values('\"Beardsley_Hall-Pearson Hall-Trotter_Hall\"', '0.5')");
+          pstmt = c.prepareStatement("insert into \"Matchbox\" (location,distance) values('\"Beardsley_Hall-Pearson_Hall-Trotter_Hall\"', '0.5')");
           pstmt.executeUpdate();
           pstmt = c.prepareStatement("insert into \"Matchbox\" (location,distance) values('\"Singer_Hall\"', '0.5')");
           pstmt.executeUpdate();
