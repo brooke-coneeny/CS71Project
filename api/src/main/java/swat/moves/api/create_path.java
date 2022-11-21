@@ -95,7 +95,7 @@ public class create_path {
 
         if (check == true){
             String[] path_array = path.split(",");
-            for (int i = path_array.length-1; i >= 0; i -= 1) {
+            for (int i = path_array.length-2; i >= 0; i -= 1) {
                 path += path_array[i];
                 path += ",";
             }
