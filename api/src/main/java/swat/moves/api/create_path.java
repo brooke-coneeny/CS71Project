@@ -72,7 +72,7 @@ public class create_path {
                     String next_location = (String) locations.get(next);
                     // get name, distance of next stop
                     LinkedHashMap<String, Float> next_stop = neighbors.get(next);
-                    if (!history.contains(next_location)) {
+                    if (!history.contains(next_location)||history.size()>=10) {
                         flag = 1;
                         float dist = next_stop.get(next_location);
                         distance -= dist;
