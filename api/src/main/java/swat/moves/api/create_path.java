@@ -45,7 +45,6 @@ public class create_path {
             c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/swatmoves",
                     "postgres", "admin");
             while (distance >= 0) {
-                System.out.println(distance);
                 locations.clear();
                 neighbors.clear();
                 // if location is not in neighbors
@@ -91,7 +90,6 @@ public class create_path {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        //path = path.substring(0, path.length() - 1);
 
         if (check == true){
             String[] path_array = path.split(",");

@@ -15,24 +15,17 @@ import java.lang.*;
 @RequestMapping
 public class create_specific_tables {
     @PostMapping("/create-specific-tables")
-    public void createLocations() throws SQLException{
+    public String createLocations() throws SQLException{
         try {
           Class.forName("org.postgresql.Driver");
           Connection c = null;
           c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/swatmoves",
           "postgres", "admin");
-          System.out.println("Opened database successfully");
           //list of tables
           List<String> locations = Arrays.asList("Dana_Hall-Hallowell_Hall-Danawell_Hall-Wharton","Clothier_Hall","Underhill_Music_Library-Kohlberg_Hall","Cornell_Library-Science_Center", "Beardsley_Hall-Pearson Hall-Trotter_Hall","Singer_Hall", "McCabe_Library", "Willets_Hall-Worth_Hall","David_Kemp_Hall-Alice_Paul_Hall-Mertz","Sharples_Dining_Hall","Matchbox","Pittenger_Hall-Palmer_Hall-Roberts_Hall-NPPR_Apartments");
 
-        //   List locations = new LinkedList<String>();
-        //   locations.addAll("Dana Hall / Hallowell Hall / Danawell Hall / Wharton","Clothier Hall","Underhill Music Library / Kohlberg Hall","Cornell Library / Science Center", "Beardsley Hall / Pearson Hall / Trotter Hall ","Singer Hall'),('McCabe Library'),('Willets Hall / Worth Hall","David Kemp Hall / Alice Paul Hall / Mertz'),('Sharples Dining Hall","Matchbox","Pittenger Hall / Palmer Hall / Roberts Hall / NPPR Apartments");
-          //run this for each one
-        //   System.out.println(locations);
-          
           for (String location : locations){
             String statement = "drop table if EXISTS \"" + location + "\"; Create table \"" + location + "\" (location varchar(400), distance FLOAT);";
-            System.out.println(statement);
             PreparedStatement pstmt = c.prepareStatement(statement);
             pstmt.executeUpdate();
           }
@@ -323,60 +316,14 @@ public class create_specific_tables {
           pstmt.executeUpdate();
           pstmt = c.prepareStatement("insert into \"Matchbox\" (location,distance) values('\"Sharples_Dining_Hall\"', '0.3')");
           pstmt.executeUpdate();
-          
-        //   PreparedStatement pstmt = c.prepareStatement("drop table if EXISTS locations; Create table locations (location varchar(400));");
-        //   pstmt.executeUpdate();
-          //insert data 
-        //   pstmt = c.prepareStatement("insert into locations (location) values('Dana Hall / Hallowell Hall / Danawell Hall / Wharton'),('Clothier Hall'),('Underhill Music Library / Kohlberg Hall'),('Cornell Library / Science Center'), ('Beardsley Hall / Pearson Hall / Trotter Hall '),('Singer Hall'),('McCabe Library'),('Willets Hall / Worth Hall'),('David Kemp Hall / Alice Paul Hall / Mertz'),('Sharples Dining Hall'),('Matchbox'),('Pittenger Hall / Palmer Hall / Roberts Hall / NPPR Apartments')");
-        //   pstmt.executeUpdate();
-
-          
-          /* 
-          Map <String, List<int[]>> map = new HashMap<String,List <int[]>> ();
-          List Dana_Hall = new ArrayList<String>();
-          String[] arr = new String[2];
-          arr[0] = "0.2";
-          arr[1] = "Clothier";
-          Dana_Hall.add(arr);
-          arr[0] = "0.3";
-          arr[1] = "Underhill";
-          Dana_Hall.add(arr);
-          arr[0] = "0.3";
-          arr[1] = "Cornell";
-          Dana_Hall.add(arr);
-          arr[0] = "0.4";
-          arr[1] = "Beardsley";
-          Dana_Hall.add(arr);
-          arr[0] = "0.4";
-          arr[1] = "Singer";
-          Dana_Hall.add(arr);
-          arr[0] = "0.3";
-          arr[1] = "McCabe";
-          Dana_Hall.add(arr);
-          arr[0] = "0.4";
-          arr[1] = "Willets";
-          Dana_Hall.add(arr);
-          arr[0] = "0.4";
-          arr[1] = "David Kemp Hall";
-          Dana_Hall.add(arr);
-          arr[0] = "0.2";
-          arr[1] = "Sharples";
-          Dana_Hall.add(arr);
-          arr[0] = "0.3";
-          arr[1] = "Matchbox";
-          Dana_Hall.add(arr);
-          arr[0] = "0.2";
-          arr[1] = "Pittenger";
-          Dana_Hall.add(arr);
-          */
-          
-          
-
 
         } catch (ClassNotFoundException e) {
           // TODO Auto-generated catch block
           e.printStackTrace();
         }
+
+        return("created data successfully");
+
       }
     
 }
