@@ -89,6 +89,10 @@ h1 {
     color: red;
 }
 
+#flexCheckDefault {
+    color: white;
+}
+
 #take-a-walk-section {
     background-color: var(--swarthmore-secondary);
 }

@@ -1,5 +1,6 @@
 var miles;
 var startLocation;
+var endAtStart;
 var listLocation = [];
 
 $("#open-take-a-walk").click(function(){
@@ -59,10 +60,12 @@ $("#confirm").click(function() {
     $("#miles").val("");
     startLocation = $("#dropdownMenuButton").text();
     $("#dropdownMenuButton").text("Dana_Hall-Hallowell_Hall-Danawell_Hall-Wharton");
+    endAtStart = $("#flexCheckDefault").is(':checked');
+    alert(endAtStart);
     if($.isNumeric(miles)) {
         $("#not-a-number").hide();
         $("#take-a-walk").collapse('toggle');
-        sendRequestForELocation(startLocation, miles);
+        sendRequestForELocation(startLocation, miles, endAtStart);
     } else {
         $("#not-a-number").show();
     }
@@ -105,7 +108,7 @@ function appendPath(path, miles) {
 
 function displayPath(start) {
     var path = [listLocation[start], listLocation[start + 1]];
-    display_route(miles, path[start], path);
+    display_route(miles, path[0], path);
 }
 
 function clearPath() {

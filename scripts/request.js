@@ -1,8 +1,8 @@
-function sendRequestForELocation(sLocation, miles) {
+function sendRequestForELocation(sLocation, miles, endAtStart) {
     var listLoc = [];
     var xhttp = new XMLHttpRequest();
     sLocation = sLocation.replace(/\s/g, '');
-    const url = ("http://localhost:8080/get-path/\"" + sLocation + "\"/" + miles);
+    const url = ("http://localhost:8080/get-path/\"" + sLocation + "\"/" + miles + "/" + endAtStart);
     xhttp.open("GET", url, true);
     xhttp.send();
     xhttp.onreadystatechange = function() {
