@@ -1,5 +1,6 @@
 var miles;
 var startLocation;
+var endAtStart;
 var listLocation = [];
 
 $("#open-take-a-walk").click(function(){
@@ -59,10 +60,11 @@ $("#confirm").click(function() {
     $("#miles").val("");
     startLocation = $("#dropdownMenuButton").text();
     $("#dropdownMenuButton").text("Dana_Hall-Hallowell_Hall-Danawell_Hall-Wharton");
+    endAtStart = $("#flexCheckDefault").is(':checked');
     if($.isNumeric(miles)) {
         $("#not-a-number").hide();
         $("#take-a-walk").collapse('toggle');
-        sendRequestForELocation(startLocation, miles);
+        sendRequestForELocation(startLocation, miles, endAtStart);
     } else {
         $("#not-a-number").show();
     }
@@ -97,15 +99,15 @@ function appendPath(path, miles) {
     $("#route-to-take").append("<p class='route-text'>You will be walking to these locations</p>");
     $("#route-to-take").append("<ol>");
     for(var i = 0; i < path.length - 1; i++) {
-        $("#route-to-take").append("<li class='route-text-" + i + "' onclick='displayPath(" + i + ")'>" + path[i] + " to " + path[i + 1] + "</li>");
+        $("#route-to-take").append("<li class='route-text-" + i + "' onclick='displayPath(" + i + ")'><b>" + path[i].replaceAll('_', ' ') + "</b> to <b>" + path[i + 1].replaceAll('_', ' ') + "</b></li>");
     }
     $("#route-to-take").append("</ol>");
-    $("#route-complete").append("<button class='btn btn-secondary' id='walk-complete' onclick='clearPath()'>Walk Completed!</button>");
+    $("#route-complete").append("<button class='btn btn-secondary' id='walk-complete' style='margin-top: 20px;' onclick='clearPath()'>Walk Completed!</button>");
 }
 
 function displayPath(start) {
     var path = [listLocation[start], listLocation[start + 1]];
-    display_route(miles, path[start], path);
+    display_route(miles, path[0], path);
 }
 
 function clearPath() {

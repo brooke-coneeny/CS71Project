@@ -72,6 +72,7 @@ h1 {
 
 #dropdownMenuButton {
     width: 98%;
+    overflow: hidden;
 }
 
 #dropdown-menu {
@@ -87,6 +88,10 @@ h1 {
 #not-a-number {
     display: none;
     color: red;
+}
+
+#flexCheckDefault {
+    color: white;
 }
 
 #take-a-walk-section {
