@@ -72,6 +72,7 @@ h1 {
 
 #dropdownMenuButton {
     width: 98%;
+    overflow: hidden;
 }
 
 #dropdown-menu {

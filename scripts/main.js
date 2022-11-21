@@ -61,7 +61,7 @@ $("#confirm").click(function() {
     startLocation = $("#dropdownMenuButton").text();
     $("#dropdownMenuButton").text("Dana_Hall-Hallowell_Hall-Danawell_Hall-Wharton");
     endAtStart = $("#flexCheckDefault").is(':checked');
-    if($.isNumeric(miles) && miles <= 3) {
+    if($.isNumeric(miles)) {
         $("#not-a-number").hide();
         $("#take-a-walk").collapse('toggle');
         sendRequestForELocation(startLocation, miles, endAtStart);
@@ -102,7 +102,7 @@ function appendPath(path, miles) {
         $("#route-to-take").append("<li class='route-text-" + i + "' onclick='displayPath(" + i + ")'><b>" + path[i].replaceAll('_', ' ') + "</b> to <b>" + path[i + 1].replaceAll('_', ' ') + "</b></li>");
     }
     $("#route-to-take").append("</ol>");
-    $("#route-complete").append("<button class='btn btn-secondary' id='walk-complete' onclick='clearPath()'>Walk Completed!</button>");
+    $("#route-complete").append("<button class='btn btn-secondary' id='walk-complete' style='margin-top: 20px;' onclick='clearPath()'>Walk Completed!</button>");
 }
 
 function displayPath(start) {
