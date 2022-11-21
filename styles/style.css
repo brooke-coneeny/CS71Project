@@ -33,11 +33,16 @@ h1 {
     margin: 5px;
 }
 
-#quest-button {
+#display-account-info {
     display: flex;
     justify-content: center;
+    align-items: center;
     max-width: 33%;
     flex-grow: 1;
+}
+
+#name {
+    color: white;
 }
 
 #take-a-walk-button {
@@ -63,6 +68,10 @@ h1 {
 #take-a-walk {
     padding-left: 30vw;
     padding-right: 30vw;
+}
+
+#dropdownMenuButton {
+    width: 98%;
 }
 
 #dropdown-menu {

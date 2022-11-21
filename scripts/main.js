@@ -1,6 +1,6 @@
 var miles;
 var startLocation;
-var endLocation = "Science Center";
+var listLocation = [];
 
 $("#open-take-a-walk").click(function(){
     $("#log-in").collapse('hide');
@@ -54,16 +54,14 @@ $("#Matchbox").click(function() {
     $("#dropdownMenuButton").text("Matchbox");
 });
 
-
-
 $("#confirm").click(function() {
-    console.log("TEST");
     miles = $("#miles").val();
+    $("#miles").val("");
     startLocation = $("#dropdownMenuButton").text();
+    $("#dropdownMenuButton").text("Dana_Hall-Hallowell_Hall-Danawell_Hall-Wharton");
     if($.isNumeric(miles)) {
         $("#not-a-number").hide();
         $("#take-a-walk").collapse('toggle');
-        alert("Hello");
         sendRequestForELocation(startLocation, miles);
     } else {
         $("#not-a-number").show();
@@ -72,8 +70,11 @@ $("#confirm").click(function() {
 
 $("#log-in-button").click(function(){
     var username = $("#username").val();
+    $("#username").val("");
     var password = $("#password").val();
-    sendRequestForLogIn(username, password);
+    $("#password").val("");
+    //sendRequestForLogIn(username, password);
+    $("#name").text(username);
     $("#log-in").collapse('toggle');
     $("#open-log-in").hide();
     $("#sign-out").show();
@@ -86,22 +87,29 @@ $("#open-log-in").click(function(){
 $("#sign-out").click(function(){
     $("#sign-out").hide();
     $("#open-log-in").show();
-});
-
-$("#walk-complete").click(function(){
-    $("#take-a-walk").collapse('hide');
+    $("#name").text("Guest");
 });
 
 function appendPath(path, miles) {
+    listLocation = path;
+    clearPath();
+    $("#distance-to-travel").append("<p class='route-text'>You will be walking for " + miles + " miles!</p>");
+    $("#route-to-take").append("<p class='route-text'>You will be walking to these locations</p>");
+    $("#route-to-take").append("<ol>");
+    for(var i = 0; i < path.length - 1; i++) {
+        $("#route-to-take").append("<li class='route-text-" + i + "' onclick='displayPath(" + i + ")'>" + path[i] + " to " + path[i + 1] + "</li>");
+    }
+    $("#route-to-take").append("</ol>");
+    $("#route-complete").append("<button class='btn btn-secondary' id='walk-complete' onclick='clearPath()'>Walk Completed!</button>");
+}
+
+function displayPath(start) {
+    var path = [listLocation[start], listLocation[start + 1]];
+    display_route(miles, path[start], path);
+}
+
+function clearPath() {
     $("#distance-to-travel").empty();
     $("#route-to-take").empty();
     $("#route-complete").empty();
-    $("#distance-to-travel").append("<p class='route-text'>You will be walking for " + miles + "!</p>");
-    $("#route-to-take").append("<p class='route-text'>You will be walking to these locations</p>");
-    $("#route-to-take").append("<ol>");
-    for(var i = 0; i < path.length; i++) {
-        $("#route-to-take").append("<li class='route-text'>" + path[i] + "</li>");
-    }
-    $("#route-to-take").append("</ol>");
-    $("#route-complete").append("<button class='btn btn-secondary' id='walk-complete'>Walk Completed!</button>");
 }
