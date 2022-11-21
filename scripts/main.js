@@ -61,7 +61,7 @@ $("#confirm").click(function() {
     startLocation = $("#dropdownMenuButton").text();
     $("#dropdownMenuButton").text("Dana_Hall-Hallowell_Hall-Danawell_Hall-Wharton");
     endAtStart = $("#flexCheckDefault").is(':checked');
-    if($.isNumeric(miles)) {
+    if($.isNumeric(miles) && miles <= 3) {
         $("#not-a-number").hide();
         $("#take-a-walk").collapse('toggle');
         sendRequestForELocation(startLocation, miles, endAtStart);
@@ -99,7 +99,7 @@ function appendPath(path, miles) {
     $("#route-to-take").append("<p class='route-text'>You will be walking to these locations</p>");
     $("#route-to-take").append("<ol>");
     for(var i = 0; i < path.length - 1; i++) {
-        $("#route-to-take").append("<li class='route-text-" + i + "' onclick='displayPath(" + i + ")'>" + path[i] + " to " + path[i + 1] + "</li>");
+        $("#route-to-take").append("<li class='route-text-" + i + "' onclick='displayPath(" + i + ")'><b>" + path[i].replaceAll('_', ' ') + "</b> to <b>" + path[i + 1].replaceAll('_', ' ') + "</b></li>");
     }
     $("#route-to-take").append("</ol>");
     $("#route-complete").append("<button class='btn btn-secondary' id='walk-complete' onclick='clearPath()'>Walk Completed!</button>");
