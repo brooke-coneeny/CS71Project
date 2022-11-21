@@ -1,11 +1,8 @@
 function sendRequestForELocation(sLocation, miles) {
     var listLoc = [];
     var xhttp = new XMLHttpRequest();
-    //const url = "http://localhost:8080/get-path/\"Clothier_Hall\"/2";
-    //xhttp.open("GET", url, true);
     sLocation = sLocation.replace(/\s/g, '');
     const url = ("http://localhost:8080/get-path/\"" + sLocation + "\"/" + miles);
-    console.log(url);
     xhttp.open("GET", url, true);
     xhttp.send();
     xhttp.onreadystatechange = function() {
@@ -14,7 +11,6 @@ function sendRequestForELocation(sLocation, miles) {
         for(let i = 0; i < listLoc.length; i++) {
           listLoc[i] = listLoc[i].split('"').join('');
         }
-        console.log(listLoc);
         display_route(miles, sLocation, listLoc);
         appendPath(listLoc, miles);
       }
