@@ -18,15 +18,16 @@ import java.util.Map.Entry;
 public class create_path {
 //UNDER HILL IS MISSING A NEIGHBOR
     @CrossOrigin(maxAge = 3600)
-    @GetMapping("/get-path/{start}/{distance}")
-    public String getLocations(@PathVariable("start") String start, @PathVariable("distance") float distance) throws SQLException {
+    @GetMapping("/get-path/{start}/{distance}/{check}")
+    public String getLocations(@PathVariable("start") String start, @PathVariable("distance") float distance, @PathVariable("check") Boolean check) throws SQLException {
         
+        if (check == true) {
+            distance = distance / (float) 2.0;
+        } 
+
         String location = "";
-        System.out.println(start);
-        System.out.println(distance);
         //'String start = ;
         // float distance = (float)3 / (float)2;
-        System.out.println(distance);
         float n_distance = 0;
         // Hashtable<String, Float> visited = new Hashtable<String, Float>();
         List<LinkedHashMap<String, Float>> visited = new LinkedList<>();
@@ -41,18 +42,16 @@ public class create_path {
         try {
             Class.forName("org.postgresql.Driver");
             Connection c = null;
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:5433/swatmoves",
+            c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/swatmoves",
                     "postgres", "admin");
-            // System.out.println("Opened database successfully");
             while (distance >= 0) {
+                System.out.println(distance);
                 locations.clear();
                 neighbors.clear();
-                System.out.println(locations);
                 // if location is not in neighbors
                 String statement = String.format("SELECT * FROM %s", start);
                 PreparedStatement pstmt = c.prepareStatement(statement);
                 ResultSet rs = pstmt.executeQuery();
-                System.out.println(rs);
                 while (rs.next()) {
                     location = rs.getString("location");
                     n_distance = rs.getFloat("distance");
@@ -62,7 +61,6 @@ public class create_path {
                     neighbors.add(m);
                     locations.add(location);
                 }
-                System.out.println(neighbors);
                 
                 int flag = 0;
                 while (flag == 0) {
@@ -77,8 +75,6 @@ public class create_path {
                     if (!history.contains(next_location)) {
                         flag = 1;
                         float dist = next_stop.get(next_location);
-                        System.out.println(next_location);
-                        System.out.println(dist);
                         distance -= dist;
                         start = next_location;
                         path += next_location + ",";
@@ -91,13 +87,21 @@ public class create_path {
                     }
                 }
             }
-            System.out.println(visited);
         } catch (ClassNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        path = path.substring(0, path.length() - 1);
+        //path = path.substring(0, path.length() - 1);
 
+        if (check == true){
+            String[] path_array = path.split(",");
+            for (int i = path_array.length-1; i >= 0; i -= 1) {
+                path += path_array[i];
+                path += ",";
+            }
+        }
+
+        path = path.substring(0, path.length() - 1);
         return path;
 
     }
