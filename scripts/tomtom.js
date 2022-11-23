@@ -195,7 +195,7 @@ const MATCHBOX = {
             coordList.push(KOHLBERG);
         } else if (loc === 'Cornell_Library-Science_Center') {
             coordList.push(SCIENCE_CENTER);
-        } else if (loc === 'Beardsley_Hall-Pearson Hall-Trotter_Hall') {
+        } else if (loc === 'Beardsley_Hall-Pearson_Hall-Trotter_Hall') {
             coordList.push(BEARDSLEY);
         } else if (loc === 'Singer_Hall') {
             coordList.push(SINGER);

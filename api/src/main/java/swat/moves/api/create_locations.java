@@ -18,7 +18,7 @@ import java.util.*;
 public class create_locations {
   
     @PostMapping("/create-locations")
-    public void createLocations() throws SQLException, IOException{
+    public String createLocations() throws SQLException, IOException{
       Properties prop=new Properties();
       FileInputStream ip= new FileInputStream("api/src/config.properties");
       prop.load(ip);
@@ -27,7 +27,6 @@ public class create_locations {
           Connection c = null;
           c = DriverManager.getConnection(prop.getProperty("url"),
           prop.getProperty("username"), prop.getProperty("password"));
-          System.out.println("Opened database successfully");
           PreparedStatement pstmt = c.prepareStatement("drop table if EXISTS locations; Create table locations (location varchar(400));");
           pstmt.executeUpdate();
           //insert data 
@@ -37,6 +36,8 @@ public class create_locations {
           // TODO Auto-generated catch block
           e.printStackTrace();
         }
+
+        return("created data successfully");
       }
     
 }

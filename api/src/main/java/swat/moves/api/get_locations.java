@@ -22,10 +22,8 @@ public class get_locations {
         Connection c = null;
         c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/swatmoves",
         "postgres", "admin");
-        System.out.println("Opened database successfully");
         PreparedStatement pstmt = c.prepareStatement("SELECT * FROM locations");
         ResultSet rs =pstmt.executeQuery();
-        System.out.println(rs);
         
         while (rs.next()) {
           location = rs.getString("location");
