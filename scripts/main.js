@@ -97,11 +97,12 @@ function appendFirstPath(path, miles) {
     listLocation = path;
     clearPath();
     $("#distance-to-travel").append("<p class='route-text'>You will be walking for " + miles + " miles!</p>");
-    $("#route-options").append("<button class='btn btn-secondary' id='current-route' class='route-buttons' onclick='displayPath(0); displayPathText(0)'>Current Route</button>");
-    $("#route-options").append("<button class='btn btn-secondary' id='all-route' class='route-buttons' onclick='displayAllPathText(0)'>All Routes</button>");
-    $("#route-options").append("<button class='btn btn-secondary' id='next-route' class='route-buttons' onclick='displayNextPath(0)'>Finished Route</button>");
+    $("#route-options").append("<button class='btn btn-secondary' id='current-route' class='route-buttons' onclick='changeButton(1); displayPath(0); displayPathText(0)'>Current Route</button>");
+    $("#route-options").append("<button class='btn btn-secondary' id='all-route' class='route-buttons' onclick='changeButton(2); displayAllPathText(0)'>All Routes</button>");
+    $("#route-options").append("<button class='btn btn-secondary' id='next-route' class='route-buttons' onclick='changeButton(3); displayNextPath(0)'>Finished Route</button>");
     displayPath(0);
     displayAllPathText(0);
+    changeButton(2);
 }
 
 function displayPath(start) {
@@ -131,13 +132,13 @@ function displayNextPath(start) {
     if(next == listLocation.length - 1) {
         $("#route-to-take").empty();
         $("#route-to-take").append("<p class='route-text'>Walk Completed!</p>");
-        $("#current-route").attr("onclick", "");
-        $("#all-route").attr("onclick", "");
-        $("#next-route").attr("onclick", "");
+        $("#current-route").attr("onclick", "changeButton(1); displayNextPath(" + start + ")");
+        $("#all-route").attr("onclick", "changeButton(2); displayAllPathText(0)");
+        $("#next-route").attr("onclick", "changeButton(3); displayNextPath(" + start + ")");
     } else {
-        $("#current-route").attr("onclick", "displayPath(" + next + "); displayPathText(" + next + ")");
-        $("#all-route").attr("onclick", "displayAllPathText(0)");
-        $("#next-route").attr("onclick", "displayNextPath(" + next + ")");
+        $("#current-route").attr("onclick", "changeButton(1); displayPath(" + next + "); displayPathText(" + next + ")");
+        $("#all-route").attr("onclick", "changeButton(2); displayAllPathText(0)");
+        $("#next-route").attr("onclick", "changeButton(3); displayNextPath(" + next + ")");
         displayPathText(next);
         displayPath(next);
     }
@@ -147,4 +148,14 @@ function clearPath() {
     $("#distance-to-travel").empty();
     $("#route-options").empty();
     $("#route-to-take").empty();
+}
+
+function changeButton(button) {
+    if(button == 1 || button == 3) {
+        $("#current-route").css("border-color", "black");
+        $("#all-route").css("border-color", "white");
+    } else if(button = 2) {
+        $("#current-route").css("border-color", "white");
+        $("#all-route").css("border-color", "black");
+    }
 }
