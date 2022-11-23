@@ -65,6 +65,8 @@ $("#confirm").click(function() {
         $("#not-a-number").hide();
         $("#take-a-walk").collapse('toggle');
         sendRequestForELocation(startLocation, miles, endAtStart);
+        $(".map-info").css("width", "55%");
+        $(".route-info").css("display", "flex");
     } else {
         $("#not-a-number").show();
     }
@@ -91,17 +93,15 @@ $("#sign-out").click(function(){
     $("#name").text("Guest");
 });
 
-function appendPath(path, miles) {
+function appendFirstPath(path, miles) {
     listLocation = path;
     clearPath();
     $("#distance-to-travel").append("<p class='route-text'>You will be walking for " + miles + " miles!</p>");
-    $("#route-to-take").append("<p class='route-text'>You will be walking to these locations</p>");
-    $("#route-to-take").append("<ol>");
-    for(var i = 0; i < path.length - 1; i++) {
-        $("#route-to-take").append("<li class='route-text-" + i + "' onclick='displayPath(" + i + ")'><b>" + path[i].replaceAll('_', ' ') + "</b> to <b>" + path[i + 1].replaceAll('_', ' ') + "</b></li>");
-    }
-    $("#route-to-take").append("</ol>");
-    $("#route-complete").append("<button class='btn btn-secondary' id='walk-complete' style='margin-top: 20px;' onclick='clearPath()'>Walk Completed!</button>");
+    $("#route-options").append("<button class='btn btn-secondary' id='current-route' class='route-buttons' onclick='displayPathText(0)'>Current Route</button>");
+    $("#route-options").append("<button class='btn btn-secondary' id='all-route' class='route-buttons' onclick='displayAllPathText(0)'>All Routes</button>");
+    $("#route-options").append("<button class='btn btn-secondary' id='next-route' class='route-buttons' onclick='displayNextPath(0)'>Finished Route</button>");
+    displayPathText(0);
+    displayPath(0);
 }
 
 function displayPath(start) {
@@ -109,8 +109,42 @@ function displayPath(start) {
     display_route(miles, path[0], path);
 }
 
+function displayPathText(start) {
+    var path = [listLocation[start], listLocation[start + 1]];
+    $("#route-to-take").empty();
+    $("#route-to-take").append("<p class='route-text'>Your current path is:</p>");
+    $("#route-to-take").append("<p class='route-text-" + start + "'><b>" + path[0].replaceAll('_', ' ') + "</b> to <b>" + path[1].replaceAll('_', ' ') + "</b></p>");
+}
+
+function displayAllPathText(start) {
+    $("#route-to-take").empty();
+    $("#route-to-take").append("<p class='route-text'>You will be walking to these locations</p>");
+    $("#route-to-take").append("<ol>");
+    for(var i = start; i < listLocation.length - 1; i++) {
+        $("#route-to-take").append("<li class='route-text-" + i + "'><b>" + listLocation[i].replaceAll('_', ' ') + "</b> to <b>" + listLocation[i + 1].replaceAll('_', ' ') + "</b></li>");
+    }
+    $("#route-to-take").append("</ol>");
+}
+
+function displayNextPath(start) {
+    var next = start + 1;
+    if(next == listLocation.length - 1) {
+        $("#route-to-take").empty();
+        $("#route-to-take").append("<p class='route-text'>Walk Completed!</p>");
+        $("#current-route").attr("onclick", "");
+        $("#all-route").attr("onclick", "");
+        $("#next-route").attr("onclick", "");
+    } else {
+        $("#current-route").attr("onclick", "displayPathText(" + next + ")");
+        $("#all-route").attr("onclick", "displayAllPathText(" + next + ")");
+        $("#next-route").attr("onclick", "displayNextPath(" + next + ")");
+        displayPath(next);
+        displayPathText(next);
+    }
+}
+
 function clearPath() {
     $("#distance-to-travel").empty();
+    $("#route-options").empty();
     $("#route-to-take").empty();
-    $("#route-complete").empty();
 }

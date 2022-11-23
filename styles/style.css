@@ -125,29 +125,72 @@ h1 {
 
 /* Backend Info Styling */
 
-.map-info{
+.contains-backend-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.map-info {
     display: flex;
     align-items: center;
     flex-direction: column;
     margin: 5px;
+    width: 100%;
 }
 
 .route-info {
-    display: flex;
+    display: none;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
     margin: 5px;
+    width: 40%;
+}
+
+#distance-to-travel {
+    text-align: center;
+    background-color: rgb(209, 119, 135);
+    border-radius: 25px;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 20px;
+    height: 10vh;
+}
+
+.route-in-text {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(209, 119, 135);
+    border-radius: 25px;
+    margin-top: 10px;
+    width: 100%;
+    padding: 20px;
+    height: 40vh;
+}
+
+#route-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 5px;
+}
+
+#route-to-take {
+    overflow-y: scroll;
+    text-align: center;
+    margin-top: 5px;
 }
 
 .route-text {
     font-weight: bold;
+    font-size: 20px;
 }
 
 /* Map Styling */
 
 #map { 
     width: 50vw; 
-    height: 50vh; 
+    height: 75vh; 
 }
  
 .icon {

@@ -11,8 +11,7 @@ function sendRequestForELocation(sLocation, miles, endAtStart) {
         for(let i = 0; i < listLoc.length; i++) {
           listLoc[i] = listLoc[i].split('"').join('');
         }
-        display_route(miles, sLocation, listLoc);
-        appendPath(listLoc, miles);
+        appendFirstPath(listLoc, miles);
       }
     };
   }
