@@ -97,11 +97,11 @@ function appendFirstPath(path, miles) {
     listLocation = path;
     clearPath();
     $("#distance-to-travel").append("<p class='route-text'>You will be walking for " + miles + " miles!</p>");
-    $("#route-options").append("<button class='btn btn-secondary' id='current-route' class='route-buttons' onclick='displayPathText(0)'>Current Route</button>");
+    $("#route-options").append("<button class='btn btn-secondary' id='current-route' class='route-buttons' onclick='displayPath(0); displayPathText(0)'>Current Route</button>");
     $("#route-options").append("<button class='btn btn-secondary' id='all-route' class='route-buttons' onclick='displayAllPathText(0)'>All Routes</button>");
     $("#route-options").append("<button class='btn btn-secondary' id='next-route' class='route-buttons' onclick='displayNextPath(0)'>Finished Route</button>");
-    displayPathText(0);
     displayPath(0);
+    displayAllPathText(0);
 }
 
 function displayPath(start) {
@@ -121,7 +121,7 @@ function displayAllPathText(start) {
     $("#route-to-take").append("<p class='route-text'>You will be walking to these locations</p>");
     $("#route-to-take").append("<ol>");
     for(var i = start; i < listLocation.length - 1; i++) {
-        $("#route-to-take").append("<li class='route-text-" + i + "'><b>" + listLocation[i].replaceAll('_', ' ') + "</b> to <b>" + listLocation[i + 1].replaceAll('_', ' ') + "</b></li>");
+        $("#route-to-take").append("<li class='route-text-" + i + "' onclick='displayPath(" + i + ")'><b>" + listLocation[i].replaceAll('_', ' ') + "</b> to <b>" + listLocation[i + 1].replaceAll('_', ' ') + "</b></li>");
     }
     $("#route-to-take").append("</ol>");
 }
@@ -135,11 +135,11 @@ function displayNextPath(start) {
         $("#all-route").attr("onclick", "");
         $("#next-route").attr("onclick", "");
     } else {
-        $("#current-route").attr("onclick", "displayPathText(" + next + ")");
-        $("#all-route").attr("onclick", "displayAllPathText(" + next + ")");
+        $("#current-route").attr("onclick", "displayPath(" + next + "); displayPathText(" + next + ")");
+        $("#all-route").attr("onclick", "displayAllPathText(0)");
         $("#next-route").attr("onclick", "displayNextPath(" + next + ")");
-        displayPath(next);
         displayPathText(next);
+        displayPath(next);
     }
 }
 
