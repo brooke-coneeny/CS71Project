@@ -42,7 +42,7 @@ public class create_path {
         try {
             Class.forName("org.postgresql.Driver");
             Connection c = null;
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/swatmoves",
+            c = DriverManager.getConnection("jdbc:postgresql://localhost:5433/swatmoves",
                     "postgres", "admin");
             while (distance >= 0) {
                 locations.clear();
