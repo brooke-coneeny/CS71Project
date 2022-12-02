@@ -16,7 +16,6 @@ import java.util.Map.Entry;
 @RestController
 @RequestMapping
 public class create_path {
-//UNDER HILL IS MISSING A NEIGHBOR
     @CrossOrigin(maxAge = 3600)
     @GetMapping("/get-path/{start}/{distance}/{check}")
     public String getLocations(@PathVariable("start") String start, @PathVariable("distance") float distance, @PathVariable("check") Boolean check) throws SQLException {
@@ -26,10 +25,7 @@ public class create_path {
         } 
 
         String location = "";
-        //'String start = ;
-        // float distance = (float)3 / (float)2;
         float n_distance = 0;
-        // Hashtable<String, Float> visited = new Hashtable<String, Float>();
         List<LinkedHashMap<String, Float>> visited = new LinkedList<>();
         HashSet<String> history = new HashSet<String>();
         history.add(start);
